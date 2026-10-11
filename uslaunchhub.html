@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USLaunchHub - US Immigration Success Platform | Gershon Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-navy': '#1d3557',
+                        'brand-blue': '#457b9d',
+                        'brand-coral': '#e63946',
+                        'brand-light': '#f1faee',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .glass-effect { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<!-- Header -->
+<header class="gradient-bg text-white">
+    <!-- Top Bar -->
+    <div class="border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3 text-sm">
+                <div class="flex items-center space-x-6">
+                    <span class="flex items-center"><i class="fas fa-phone mr-2"></i> +1 (646) 402-5402</span>
+                    <span class="flex items-center"><i class="fas fa-envelope mr-2"></i> hello@uslaunchhub.com</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="px-4 py-2 bg-white/20 rounded-md hover:bg-white/30 transition-colors">Client Portal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+            <div class="flex items-center">
+                <img src="img/hero.png" alt="USLaunchHub Logo" class="h-12 mr-3">
+                <div>
+                    <h1 class="text-2xl font-bold">USLaunchHub</h1>
+                    <p class="text-sm opacity-80">Gershon Consulting</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="relative group">
+                    <button class="hover:text-gershon-gold transition-colors font-medium flex items-center">
+                        Coming From <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="coming-from-france.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <span class="text-gray-700 hover:text-brand-coral">France</span>
+                        </a>
+                        <a href="coming-from-uk.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <span class="text-gray-700 hover:text-brand-coral">United Kingdom</span>
+                        </a>
+                        <a href="coming-from-germany.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Germany</span>
+                        </a>
+                        <a href="coming-from-ukraine.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇺🇦</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Ukraine</span>
+                        </a>
+                        <a href="coming-from-russia.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇷🇺</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Russia</span>
+                        </a>
+                        <a href="coming-from-poland.html" class="flex items-center px-4 py-3 hover:bg-gray-50">
+                            <span class="text-2xl mr-3">🇵🇱</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Poland</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="partners.html" class="hover:text-gershon-gold transition-colors font-medium">
+                    <i class="fas fa-handshake mr-1"></i>Partners
+                </a>
+                
+                <a href="#services" class="hover:text-gershon-gold transition-colors">Services</a>
+                <a href="cities.html" class="hover:text-gershon-gold transition-colors">Cities</a>
+                <a href="dashboard.html" class="hover:text-gershon-gold transition-colors">Dashboard</a>
+                <a href="https://calendar.app.google/FMAKF6AK9zRg1B3v5" target="_blank" class="hover:text-gershon-gold transition-colors">Book Now</a>
+            </div>
+            
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl" id="mobileMenuIcon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-gershon-navy/95 backdrop-blur-sm border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="space-y-3">
+                <div class="border-b border-white/20 pb-3 mb-3">
+                    <p class="text-xs text-white/60 uppercase mb-2">Coming From</p>
+                    <a href="coming-from-france.html" class="flex items-center py-2 hover:text-gershon-gold">
+                        <span class="text-2xl mr-3">🇫🇷</span>
+                        <span class="text-white">France</span>
+                    </a>
+                    <a href="coming-from-uk.html" class="flex items-center py-2 hover:text-gershon-gold">
+                        <span class="text-2xl mr-3">🇬🇧</span>
+                        <span class="text-white">United Kingdom</span>
+                    </a>
+                    <a href="coming-from-germany.html" class="flex items-center py-2 hover:text-gershon-gold">
+                        <span class="text-2xl mr-3">🇩🇪</span>
+                        <span class="text-white">Germany</span>
+                    </a>
+                    <a href="coming-from-ukraine.html" class="flex items-center py-2 hover:text-gershon-gold">
+                        <span class="text-2xl mr-3">🇺🇦</span>
+                        <span class="text-white">Ukraine</span>
+                    </a>
+                    <a href="coming-from-russia.html" class="flex items-center py-2 hover:text-gershon-gold">
+                        <span class="text-2xl mr-3">🇷🇺</span>
+                        <span class="text-white">Russia</span>
+                    </a>
+                    <a href="coming-from-poland.html" class="flex items-center py-2 hover:text-gershon-gold">
+                        <span class="text-2xl mr-3">🇵🇱</span>
+                        <span class="text-white">Poland</span>
+                    </a>
+                </div>
+                <a href="partners.html" class="block text-white hover:text-gershon-gold transition-colors py-2">
+                    <i class="fas fa-handshake mr-2"></i>Partners
+                </a>
+                <a href="#services" class="block text-white hover:text-gershon-gold transition-colors py-2">Services</a>
+                <a href="cities.html" class="block text-white hover:text-gershon-gold transition-colors py-2">Cities</a>
+                <a href="dashboard.html" class="block text-white hover:text-gershon-gold transition-colors py-2">Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-12">
+        <div class="text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">Launch Your<br><span class="text-gershon-gold">American Dream</span></h2>
+            <p class="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Your complete launch platform for US immigration success. Expert guidance, project management, 
+                and personalized support from initial consultation to final approval - launching your journey to America.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('services')" class="px-8 py-4 bg-gershon-gold text-gershon-navy font-semibold rounded-lg hover:bg-yellow-400 transition-colors transform hover:scale-105">
+                    <i class="fas fa-rocket mr-2"></i>Start Your Project
+                </button>
+                <a href="dashboard.html" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors inline-block">
+                    <i class="fas fa-tachometer-alt mr-2"></i>View Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16">
+            <div class="glass-effect text-center p-6 rounded-xl">
+                <i class="fas fa-users text-3xl text-gershon-gold mb-3"></i>
+                <div class="text-2xl font-bold">500+</div>
+                <div class="text-sm opacity-80">Successful Cases</div>
+            </div>
+            <div class="glass-effect text-center p-6 rounded-xl">
+                <i class="fas fa-clock text-3xl text-gershon-gold mb-3"></i>
+                <div class="text-2xl font-bold">6 Months</div>
+                <div class="text-sm opacity-80">Avg. Processing Time</div>
+            </div>
+            <div class="glass-effect text-center p-6 rounded-xl">
+                <i class="fas fa-percent text-3xl text-gershon-gold mb-3"></i>
+                <div class="text-2xl font-bold">98%</div>
+                <div class="text-sm opacity-80">Success Rate</div>
+            </div>
+            <div class="glass-effect text-center p-6 rounded-xl">
+                <i class="fas fa-star text-3xl text-gershon-gold mb-3"></i>
+                <div class="text-2xl font-bold">5.0</div>
+                <div class="text-sm opacity-80">Client Rating</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gershon-navy mb-4">USLaunchHub Services</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive immigration project management tailored to your unique needs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Management -->
+            <div class="card-hover bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <div class="bg-gershon-blue text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-project-diagram text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gershon-navy mb-4">Project Management</h3>
+                <p class="text-gray-600 mb-6">End-to-end management of your immigration project with dedicated project managers, timelines, and milestone tracking.</p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Dedicated Project Manager</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Custom Project Timeline</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Regular Status Updates</li>
+                </ul>
+            </div>
+
+            <!-- Document Services -->
+            <div class="card-hover bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <div class="bg-gershon-gold text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-file-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gershon-navy mb-4">Document Management</h3>
+                <p class="text-gray-600 mb-6">Secure document collection, review, and submission services with expert guidance on requirements.</p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Document Checklist</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Expert Review</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Secure Storage</li>
+                </ul>
+            </div>
+
+            <!-- Legal Consultation -->
+            <div class="card-hover bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <div class="bg-green-600 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-balance-scale text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gershon-navy mb-4">Legal Consultation</h3>
+                <p class="text-gray-600 mb-6">Expert legal advice from experienced immigration attorneys specialized in your specific visa category.</p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Attorney Consultation</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Case Strategy</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Legal Representation</li>
+                </ul>
+            </div>
+
+            <!-- Application Filing -->
+            <div class="card-hover bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <div class="bg-purple-600 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-paper-plane text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gershon-navy mb-4">Application Filing</h3>
+                <p class="text-gray-600 mb-6">Professional preparation and filing of all immigration forms and applications with accuracy guarantee.</p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Form Preparation</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Accuracy Review</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Timely Submission</li>
+                </ul>
+            </div>
+
+            <!-- Interview Preparation -->
+            <div class="card-hover bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <div class="bg-red-600 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-user-tie text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gershon-navy mb-4">Interview Preparation</h3>
+                <p class="text-gray-600 mb-6">Comprehensive interview coaching and preparation sessions to maximize your chances of approval.</p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Mock Interviews</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Q&A Preparation</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Confidence Building</li>
+                </ul>
+            </div>
+
+            <!-- Ongoing Support -->
+            <div class="card-hover bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <div class="bg-indigo-600 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-headset text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gershon-navy mb-4">Ongoing Support</h3>
+                <p class="text-gray-600 mb-6">24/7 support throughout your immigration journey with dedicated client success managers.</p>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>24/7 Support</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Regular Check-ins</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Emergency Assistance</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- Quick Actions -->
+<section class="py-16 bg-gershon-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <a href="projects.html" class="block w-full bg-gershon-blue hover:bg-blue-800 p-6 rounded-xl transition-colors">
+                    <i class="fas fa-plus-circle text-3xl mb-4"></i>
+                    <h3 class="font-semibold text-lg">Start New Project</h3>
+                    <p class="text-sm opacity-80 mt-2">Begin your immigration journey</p>
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <a href="dashboard.html" class="block w-full bg-gershon-gold hover:bg-yellow-500 text-gershon-navy p-6 rounded-xl transition-colors">
+                    <i class="fas fa-tachometer-alt text-3xl mb-4"></i>
+                    <h3 class="font-semibold text-lg">View Dashboard</h3>
+                    <p class="text-sm opacity-80 mt-2">Track your progress</p>
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <a href="documents.html" class="block w-full bg-green-600 hover:bg-green-700 p-6 rounded-xl transition-colors">
+                    <i class="fas fa-folder-open text-3xl mb-4"></i>
+                    <h3 class="font-semibold text-lg">Document Portal</h3>
+                    <p class="text-sm opacity-80 mt-2">Upload & manage files</p>
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <button onclick="openSupportChat()" class="w-full bg-purple-600 hover:bg-purple-700 p-6 rounded-xl transition-colors">
+                    <i class="fas fa-comments text-3xl mb-4"></i>
+                    <h3 class="font-semibold text-lg">Live Support</h3>
+                    <p class="text-sm opacity-80 mt-2">Get instant help</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dashboard Preview Section -->
+<section id="dashboard" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gershon-navy mb-4">Client Dashboard</h2>
+            <p class="text-xl text-gray-600">Track your immigration project in real-time</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Dashboard Header -->
+            <div class="bg-gershon-navy text-white p-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold">Welcome back, Sarah Johnson</h3>
+                        <p class="opacity-80">EB-1A Extraordinary Ability Petition</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold">73%</div>
+                        <div class="text-sm opacity-80">Complete</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="p-6 border-b">
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>Project Progress</span>
+                    <span>Step 4 of 6</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-gershon-blue h-3 rounded-full" style="width: 73%"></div>
+                </div>
+            </div>
+            
+            <!-- Dashboard Content -->
+            <div class="p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Current Tasks -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-lg font-semibold text-gershon-navy mb-4">Current Tasks</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                            <i class="fas fa-clock text-yellow-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium">Review Attorney Feedback</div>
+                                <div class="text-sm text-gray-600">Due: Tomorrow</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                            <i class="fas fa-upload text-blue-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium">Upload Additional Evidence</div>
+                                <div class="text-sm text-gray-600">2 documents pending</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                            <i class="fas fa-check text-green-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium">I-140 Form Completed</div>
+                                <div class="text-sm text-gray-600">Submitted 3 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gershon-navy mb-4">Project Stats</h4>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-gershon-blue">156</div>
+                            <div class="text-sm text-gray-600">Days Since Start</div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-green-600">24</div>
+                            <div class="text-sm text-gray-600">Documents Submitted</div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-orange-600">3</div>
+                            <div class="text-sm text-gray-600">Pending Actions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 bg-gray-50 border-t">
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-600">Last updated: 2 hours ago</div>
+                    <a href="dashboard.html" class="px-6 py-2 bg-gershon-blue text-white rounded-lg hover:bg-blue-800 transition-colors">
+                        View Full Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gershon-navy text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <img src="img/hero.png" alt="USLaunchHub" class="h-10 mr-2">
+                    <div>
+                        <div class="font-bold text-lg">USLaunchHub</div>
+                        <div class="text-sm opacity-80">Gershon Consulting</div>
+                    </div>
+                </div>
+                <p class="text-sm opacity-80 mb-4">Launching your path to US immigration success.</p>
+                <div class="flex space-x-4">
+                    <i class="fab fa-linkedin text-xl hover:text-gershon-gold cursor-pointer"></i>
+                    <i class="fab fa-twitter text-xl hover:text-gershon-gold cursor-pointer"></i>
+                    <i class="fab fa-facebook text-xl hover:text-gershon-gold cursor-pointer"></i>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-4">Services</h4>
+                <ul class="space-y-2 text-sm opacity-80">
+                    <li><a href="#" class="hover:text-gershon-gold">Project Management</a></li>
+                    <li><a href="#" class="hover:text-gershon-gold">Document Services</a></li>
+                    <li><a href="#" class="hover:text-gershon-gold">Legal Consultation</a></li>
+                    <li><a href="#" class="hover:text-gershon-gold">Interview Prep</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm opacity-80">
+                    <li><a href="#" class="hover:text-gershon-gold">Client Dashboard</a></li>
+                    <li><a href="#" class="hover:text-gershon-gold">Document Portal</a></li>
+                    <li><a href="#" class="hover:text-gershon-gold">Live Chat</a></li>
+                    <li><a href="#" class="hover:text-gershon-gold">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-4">Contact</h4>
+                <div class="space-y-2 text-sm opacity-80">
+                    <div><i class="fas fa-phone mr-2"></i>+1 (646) 402-5402</div>
+                    <div><i class="fas fa-envelope mr-2"></i>hello@uslaunchhub.com</div>
+                    <div><i class="fas fa-map-marker-alt mr-2"></i>New York, NY</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm opacity-80">
+            <p>&copy; 2024 Gershon Consulting. All rights reserved. | <a href="#" class="hover:text-gershon-gold">Privacy Policy</a> | <a href="#" class="hover:text-gershon-gold">Terms of Service</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+function openBookingModal() {
+    alert('Booking system will be implemented in the next phase. Please call +1 (646) 402-5402 to schedule your consultation.');
+}
+
+function openNewProjectModal() {
+    alert('New project creation system will be implemented. Please contact our concierge team to start your immigration project.');
+}
+
+function openDocumentPortal() {
+    alert('Secure document portal will be available in your client dashboard. Contact support for access.');
+}
+
+function openSupportChat() {
+    alert('Live chat support system will be integrated. For immediate assistance, please call +1 (646) 402-5402.');
+}
+
+// Toggle mobile menu
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('mobileMenuIcon');
+    
+    menu.classList.toggle('hidden');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add sticky navbar behavior
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.classList.add('shadow-lg');
+    } else {
+        nav.classList.remove('shadow-lg');
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santé et assurance aux États-Unis | USLaunchHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-navy': '#1c3664',
+                        'brand-red': '#e31837',
+                        'brand-dark': '#0a1628',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-icon { 
+            width: 60px; 
+            height: 60px; 
+            background: linear-gradient(135deg, #1e40af 0%, #1e293b 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            border-left: 4px solid #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<!-- Header -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="img/hero.png" alt="USLaunchHub" class="h-16 md:h-20">
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-6 text-brand-navy">
+                <div class="relative group">
+                    <button class="hover:text-brand-red transition-colors font-medium flex items-center">
+                        Coming From <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="coming-from-france.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <span class="text-gray-700 hover:text-brand-red">France</span>
+                        </a>
+                        <a href="coming-from-uk.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <span class="text-gray-700 hover:text-brand-coral">United Kingdom</span>
+                        </a>
+                        <a href="coming-from-germany.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Germany</span>
+                        </a>
+                        <a href="coming-from-ukraine.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇺🇦</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Ukraine</span>
+                        </a>
+                        <a href="coming-from-russia.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇷🇺</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Russia</span>
+                        </a>
+                        <a href="coming-from-poland.html" class="flex items-center px-4 py-3 hover:bg-gray-50">
+                            <span class="text-2xl mr-3">🇵🇱</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Poland</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="partners.html" class="hover:text-brand-red transition-colors font-medium">
+                    <i class="fas fa-handshake mr-1"></i>Partners
+                </a>
+                <a href="index.html" class="hover:text-brand-red transition-colors font-medium">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <a href="index.html#resources" class="hover:text-brand-red transition-colors font-medium">
+                    More Resources
+                </a>
+            </nav>
+            <button class="md:hidden text-brand-navy" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 pb-4">
+            <div class="space-y-3 pt-4">
+                <div class="border-b pb-3 mb-3">
+                    <p class="text-xs text-gray-500 uppercase mb-2 px-4">Coming From</p>
+                    <a href="coming-from-france.html" class="flex items-center px-4 py-2 hover:bg-gray-50">
+                        <span class="text-2xl mr-3">🇫🇷</span>
+                        <span class="text-brand-navy">France</span>
+                    </a>
+                </div>
+                <a href="partners.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">
+                    <i class="fas fa-handshake mr-2"></i>Partners
+                </a>
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="index.html#resources" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">More Resources</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+}
+</script>
+
+<!-- Content -->
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Page Title -->
+    <header class="mb-12">
+        <div class="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+            <i class="fas fa-folder"></i>
+            <span>Guide Santé & Assurance</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+            Santé et assurance aux États-Unis
+        </h1>
+        
+        <p class="text-xl text-gray-600">
+            <em>Health and Insurance: Understanding a Complex System</em>
+        </p>
+    </header>
+
+    <!-- Quick Navigation -->
+    <nav class="bg-white rounded-xl border border-gray-200 p-6 mb-12">
+        <h2 class="text-lg font-bold text-brand-navy mb-4">
+            <i class="fas fa-list mr-2"></i>Plus de guides
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <a href="credit.html" class="hover:text-brand-red">💳 Score de crédit</a>
+            <a href="schools.html" class="hover:text-brand-red">🎓 Choisir une école</a>
+            <a href="housing.html" class="hover:text-brand-red">🏠 Se loger aux USA</a>
+            <a href="business.html" class="hover:text-brand-red">💼 Start a Business</a>
+            <a href="moving.html" class="hover:text-brand-red">🚚 Déménagement international</a>
+            <a href="culture.html" class="hover:text-brand-red">🇺🇸 Culture & Adaptation</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="mb-16">
+        <div class="section-icon">
+            <i class="fas fa-heartbeat"></i>
+        </div>
+        
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">
+            🏥 Comprendre le système de santé américain
+        </h2>
+        
+        <div class="prose prose-lg max-w-none">
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4">Les bases du système de santé américain</h3>
+            <p class="text-gray-700 mb-4">
+                En France, la Sécurité sociale et la mutuelle garantissent un accès universel et relativement simple aux soins. 
+                Aux États-Unis, il n'existe aucune couverture automatique : chaque résident doit s'inscrire à un plan d'assurance 
+                santé privé, souvent lié à l'employeur. Les coûts peuvent être très élevés, et les franchises (deductibles) 
+                ainsi que les co-paiements (copays) sont la norme.
+            </p>
+            
+            <div class="warning-box p-6 rounded-xl mb-6">
+                <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-brand-red text-2xl mr-4 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-2">⚠️ Point de vigilance important</h4>
+                        <p class="text-gray-800">
+                            Sans assurance, une simple visite aux urgences peut coûter plusieurs milliers de dollars. 
+                            Il est donc crucial de souscrire une assurance dès votre arrivée, même temporaire.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4 mt-8">Types d'assurance santé disponibles</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h4 class="font-bold text-brand-navy mb-3">
+                        <i class="fas fa-briefcase text-blue-600 mr-2"></i>Assurance employeur
+                    </h4>
+                    <p class="text-sm text-gray-700 mb-3">
+                        L'employeur paie une partie importante de la prime. C'est l'option la plus courante 
+                        et généralement la moins chère pour vous.
+                    </p>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>✅ Prime partagée (employeur paie 50-80%)</li>
+                        <li>✅ Plans avec couverture étendue</li>
+                        <li>✅ Inscription simplifiée</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h4 class="font-bold text-brand-navy mb-3">
+                        <i class="fas fa-shopping-cart text-purple-600 mr-2"></i>Healthcare Marketplace
+                    </h4>
+                    <p class="text-sm text-gray-700 mb-3">
+                        Pour indépendants et ceux sans assurance employeur. Accès via HealthCare.gov. 
+                        Subventions possibles selon revenus.
+                    </p>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>✅ Choix de plans variés</li>
+                        <li>✅ Subventions fédérales disponibles</li>
+                        <li>⚠️ Plus cher sans subvention</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4 mt-8">Comprendre votre plan d'assurance</h3>
+            
+            <p class="text-gray-700 mb-6">
+                Contrairement à la France, vous devez comprendre plusieurs concepts financiers pour gérer votre assurance santé américaine :
+            </p>
+
+            <div class="space-y-4 mb-8">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-blue-600">
+                    <h5 class="font-bold text-brand-navy mb-2">Premium (Prime mensuelle)</h5>
+                    <p class="text-sm text-gray-700">
+                        Montant que vous payez chaque mois pour avoir l'assurance, que vous utilisiez des soins ou non. 
+                        Typique : $200-$600/mois pour un individu.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border-l-4 border-purple-600">
+                    <h5 class="font-bold text-brand-navy mb-2">Deductible (Franchise)</h5>
+                    <p class="text-sm text-gray-700">
+                        Montant que vous devez payer de votre poche avant que l'assurance commence à couvrir. 
+                        Typique : $1,000-$5,000/an. Plus la franchise est élevée, plus la prime est basse.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border-l-4 border-green-600">
+                    <h5 class="font-bold text-brand-navy mb-2">Copay (Co-paiement)</h5>
+                    <p class="text-sm text-gray-700">
+                        Montant fixe que vous payez lors de chaque visite médicale. Typique : $25-$50 médecin généraliste, 
+                        $50-$100 spécialiste, $200+ urgences.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border-l-4 border-red-600">
+                    <h5 class="font-bold text-brand-navy mb-2">Out-of-Pocket Maximum</h5>
+                    <p class="text-sm text-gray-700">
+                        Montant maximum que vous payerez dans l'année. Une fois atteint, l'assurance couvre 100%. 
+                        Typique : $5,000-$10,000/an.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4 mt-8">Conseils pratiques pour expatriés</h3>
+
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-6">
+                <h4 class="font-bold text-gray-900 mb-3">
+                    <i class="fas fa-lightbulb text-blue-600 mr-2"></i>Actions à prendre dès votre arrivée
+                </h4>
+                <ol class="space-y-3 text-gray-700">
+                    <li><strong>1. Inscrivez-vous immédiatement</strong> au plan de votre employeur dès le premier jour</li>
+                    <li><strong>2. Choisissez un médecin généraliste</strong> (Primary Care Physician) dans votre réseau</li>
+                    <li><strong>3. Téléchargez l'app de votre assurance</strong> pour gérer facilement vos soins</li>
+                    <li><strong>4. Gardez votre carte d'assurance</strong> toujours avec vous</li>
+                    <li><strong>5. Vérifiez toujours</strong> que le médecin/hôpital est "in-network" avant tout soin</li>
+                </ol>
+            </div>
+
+
+        </div>
+    </section>
+</article>
+
+<!-- Footer -->
+<footer class="bg-brand-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-bold text-lg mb-4">USLaunchHub</h3>
+                <p class="text-gray-300 text-sm">
+                    Votre partenaire pour une installation réussie aux États-Unis
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Guides</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="health.html" class="hover:text-white">Santé & Assurance</a></li>
+                    <li><a href="credit.html" class="hover:text-white">Score de crédit</a></li>
+                    <li><a href="housing.html" class="hover:text-white">Logement</a></li>
+                    <li><a href="business.html" class="hover:text-white">Entreprise</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Contact</h4>
+                <p class="text-sm text-gray-300">
+                    <i class="fas fa-envelope mr-2"></i>hello@uslaunchhub.com
+                </p>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>&copy; 2024 USLaunchHub. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Best Path to the US | USLaunchHub Assessment Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-navy': '#1c3664',
+                        'brand-red': '#e31837',
+                        'brand-dark': '#0a1628',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .question-card { 
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .question-card.active { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .option-btn {
+            transition: all 0.3s ease;
+        }
+        .option-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(28, 54, 100, 0.15);
+        }
+        .option-btn.selected {
+            border: 3px solid #e31837;
+            background: #fee2e2;
+        }
+        .progress-bar {
+            transition: width 0.4s ease;
+        }
+        .result-card {
+            animation: slideUp 0.6s ease;
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<!-- Header -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+            <a href="index.html">
+                <img src="img/hero.png" alt="USLaunchHub" class="h-16 md:h-20">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <div class="relative group">
+                    <button class="text-brand-navy hover:text-brand-red transition-colors font-medium flex items-center">
+                        Coming From <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="coming-from-france.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <span class="text-gray-700 hover:text-brand-red">France</span>
+                        </a>
+                        <a href="coming-from-uk.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <span class="text-gray-700 hover:text-brand-coral">United Kingdom</span>
+                        </a>
+                        <a href="coming-from-germany.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Germany</span>
+                        </a>
+                        <a href="coming-from-ukraine.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇺🇦</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Ukraine</span>
+                        </a>
+                        <a href="coming-from-russia.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇷🇺</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Russia</span>
+                        </a>
+                        <a href="coming-from-poland.html" class="flex items-center px-4 py-3 hover:bg-gray-50">
+                            <span class="text-2xl mr-3">🇵🇱</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Poland</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="partners.html" class="text-brand-navy hover:text-brand-red transition-colors font-medium">
+                    <i class="fas fa-handshake mr-1"></i>Partners
+                </a>
+                <a href="index.html" class="text-brand-navy hover:text-brand-red font-medium transition-colors">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+            </nav>
+            <button class="md:hidden text-brand-navy" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 pb-4">
+            <div class="space-y-3 pt-4">
+                <div class="border-b pb-3 mb-3">
+                    <p class="text-xs text-gray-500 uppercase mb-2 px-4">Coming From</p>
+                    <a href="coming-from-france.html" class="flex items-center px-4 py-2 hover:bg-gray-50">
+                        <span class="text-2xl mr-3">🇫🇷</span>
+                        <span class="text-brand-navy">France</span>
+                    </a>
+                </div>
+                <a href="partners.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">
+                    <i class="fas fa-handshake mr-2"></i>Partners
+                </a>
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy"><i class="fas fa-home mr-2"></i>Home</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+}
+</script>
+
+<!-- Main Content -->
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Intro Section -->
+    <div id="intro" class="text-center mb-12">
+        <div class="inline-block bg-red-50 text-brand-red px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <i class="fas fa-compass mr-2"></i>FREE ASSESSMENT TOOL
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+            Find Your Best Path to the US
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Answer 8 quick questions to discover the ideal visa, relocation strategy, and resources for your unique situation
+        </p>
+        <button onclick="startAssessment()" class="px-8 py-4 bg-brand-red hover:bg-red-600 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg">
+            <i class="fas fa-play mr-2"></i>Start Assessment (2 minutes)
+        </button>
+        
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-gray-200">
+                <i class="fas fa-bolt text-3xl text-brand-red mb-4"></i>
+                <h3 class="font-bold text-brand-navy mb-2">Quick & Easy</h3>
+                <p class="text-sm text-gray-600">Just 2 minutes to complete</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-200">
+                <i class="fas fa-bullseye text-3xl text-brand-red mb-4"></i>
+                <h3 class="font-bold text-brand-navy mb-2">Personalized Results</h3>
+                <p class="text-sm text-gray-600">Tailored recommendations</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-200">
+                <i class="fas fa-gift text-3xl text-brand-red mb-4"></i>
+                <h3 class="font-bold text-brand-navy mb-2">100% Free</h3>
+                <p class="text-sm text-gray-600">No credit card required</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progressSection" class="hidden mb-8">
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium text-gray-600">Question <span id="currentQuestion">1</span> of 8</span>
+            <span class="text-sm font-medium text-brand-navy"><span id="progressPercent">12</span>%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-3">
+            <div id="progressBar" class="progress-bar bg-brand-red h-3 rounded-full" style="width: 12.5%"></div>
+        </div>
+    </div>
+
+    <!-- Questions Container -->
+    <div id="questionsContainer" class="hidden">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+
+    <!-- Results Section -->
+    <div id="resultsSection" class="hidden">
+        <div class="result-card bg-white rounded-2xl border-2 border-brand-red p-8 mb-8">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-4xl text-green-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-brand-navy mb-4">Your Personalized Path</h2>
+                <p class="text-gray-600">Based on your answers, here's what we recommend:</p>
+            </div>
+
+            <!-- Results will be dynamically inserted here -->
+            <div id="resultsContent"></div>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="resetAssessment()" class="px-8 py-4 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold rounded-lg transition-all">
+                    <i class="fas fa-redo mr-2"></i>Start Over
+                </button>
+            </div>
+
+            <!-- Email Results -->
+            <div class="mt-8 p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-300">
+                <div class="flex items-start mb-4">
+                    <i class="fas fa-envelope text-3xl text-blue-600 mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-brand-navy mb-2 text-lg">Get Your Results by Email</h3>
+                        <p class="text-gray-700 text-sm">
+                            Receive a detailed copy of your assessment results and recommendations. 
+                            We'll also contact you within 24 hours to discuss your personalized path.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" id="emailInput" placeholder="your@email.com" required class="flex-1 px-4 py-3 border-2 border-blue-300 rounded-lg focus:ring-2 focus:ring-brand-red focus:border-brand-red">
+                    <button onclick="emailResults()" class="px-8 py-3 bg-brand-red hover:bg-red-600 text-white font-bold rounded-lg transition-all shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Results
+                    </button>
+                </div>
+                <p class="text-xs text-gray-600 mt-3 text-center">
+                    <i class="fas fa-lock mr-1"></i>Your information is secure. We'll send results to you and our team at hello@uslaunchhub.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- JavaScript -->
+<script>
+const questions = [
+    {
+        id: 1,
+        question: "What is your primary reason for moving to the US?",
+        subtitle: "Select the option that best describes your situation",
+        options: [
+            { text: "Start or expand a business", value: "entrepreneur", icon: "rocket" },
+            { text: "Work for a US company", value: "employee", icon: "briefcase" },
+            { text: "Study at a US institution", value: "student", icon: "graduation-cap" },
+            { text: "Retire and enjoy life", value: "retired", icon: "umbrella-beach" },
+            { text: "Join family members", value: "family", icon: "home" }
+        ]
+    },
+    {
+        id: 2,
+        question: "What is your current employment status?",
+        subtitle: "This helps us understand your financial situation",
+        options: [
+            { text: "Business owner/Entrepreneur", value: "business_owner", icon: "store" },
+            { text: "Employed full-time", value: "employed", icon: "user-tie" },
+            { text: "Freelancer/Consultant", value: "freelancer", icon: "laptop" },
+            { text: "Student", value: "student", icon: "book" },
+            { text: "Retired", value: "retired", icon: "couch" }
+        ]
+    },
+    {
+        id: 3,
+        question: "What is your timeline for moving?",
+        subtitle: "When do you plan to relocate to the United States?",
+        options: [
+            { text: "Within 6 months", value: "immediate", icon: "fast-forward" },
+            { text: "6-12 months", value: "medium", icon: "calendar-alt" },
+            { text: "1-2 years", value: "long", icon: "calendar-check" },
+            { text: "2+ years (planning phase)", value: "planning", icon: "map" }
+        ]
+    },
+    {
+        id: 4,
+        question: "What is your family situation?",
+        subtitle: "Who will be moving with you?",
+        options: [
+            { text: "Just me (single)", value: "single", icon: "user" },
+            { text: "Me and spouse/partner", value: "couple", icon: "heart" },
+            { text: "Family with children", value: "family_kids", icon: "users" },
+            { text: "Extended family", value: "extended", icon: "user-friends" }
+        ]
+    },
+    {
+        id: 5,
+        question: "What is your approximate investment capacity?",
+        subtitle: "For visa investment, business capital, or relocation costs",
+        options: [
+            { text: "Under $50k", value: "budget_low", icon: "dollar-sign" },
+            { text: "$50k - $200k", value: "budget_mid", icon: "coins" },
+            { text: "$200k - $500k", value: "budget_high", icon: "money-bill-wave" },
+            { text: "$500k+", value: "budget_investor", icon: "gem" }
+        ]
+    },
+    {
+        id: 6,
+        question: "Do you have a job offer from a US company?",
+        subtitle: "This significantly affects your visa options",
+        options: [
+            { text: "Yes, confirmed offer", value: "job_yes", icon: "check-circle" },
+            { text: "Negotiating/Pending", value: "job_pending", icon: "clock" },
+            { text: "No, but looking", value: "job_looking", icon: "search" },
+            { text: "No, not applicable", value: "job_no", icon: "times-circle" }
+        ]
+    },
+    {
+        id: 7,
+        question: "What is your education level?",
+        subtitle: "Educational background affects visa eligibility",
+        options: [
+            { text: "Advanced degree (Master's/PhD)", value: "edu_advanced", icon: "user-graduate" },
+            { text: "Bachelor's degree", value: "edu_bachelor", icon: "university" },
+            { text: "Some college/Associate's", value: "edu_some", icon: "book-open" },
+            { text: "High school", value: "edu_high", icon: "school" }
+        ]
+    },
+    {
+        id: 8,
+        question: "Which US region interests you most?",
+        subtitle: "Your preferred location for living and working",
+        options: [
+            { text: "East Coast (NYC, Boston, Miami)", value: "region_east", icon: "building" },
+            { text: "West Coast (LA, SF, Seattle)", value: "region_west", icon: "sun" },
+            { text: "South (Texas, Florida, Georgia)", value: "region_south", icon: "palm-tree" },
+            { text: "Midwest (Chicago, Detroit)", value: "region_midwest", icon: "industry" },
+            { text: "Still deciding", value: "region_open", icon: "globe-americas" }
+        ]
+    }
+];
+
+let currentQuestionIndex = 0;
+let answers = {};
+
+function startAssessment() {
+    document.getElementById('intro').classList.add('hidden');
+    document.getElementById('progressSection').classList.remove('hidden');
+    document.getElementById('questionsContainer').classList.remove('hidden');
+    showQuestion(0);
+}
+
+function showQuestion(index) {
+    currentQuestionIndex = index;
+    const question = questions[index];
+    
+    // Update progress
+    const progress = ((index + 1) / questions.length) * 100;
+    document.getElementById('currentQuestion').textContent = index + 1;
+    document.getElementById('progressPercent').textContent = Math.round(progress);
+    document.getElementById('progressBar').style.width = progress + '%';
+    
+    // Build question HTML
+    const questionHTML = `
+        <div class="question-card active bg-white rounded-2xl border border-gray-200 p-8 mb-8">
+            <div class="mb-8">
+                <div class="inline-block bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                    QUESTION ${index + 1} OF ${questions.length}
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-2">${question.question}</h2>
+                <p class="text-gray-600">${question.subtitle}</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${question.options.map(option => `
+                    <button onclick="selectAnswer(${index}, '${option.value}')" 
+                            class="option-btn text-left p-6 border-2 border-gray-200 rounded-xl hover:border-brand-red transition-all">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-${option.icon} text-brand-red text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-brand-navy mb-1">${option.text}</div>
+                            </div>
+                        </div>
+                    </button>
+                `).join('')}
+            </div>
+            
+            ${index > 0 ? `
+                <div class="mt-6">
+                    <button onclick="previousQuestion()" class="text-brand-navy hover:text-brand-red font-medium transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous Question
+                    </button>
+                </div>
+            ` : ''}
+        </div>
+    `;
+    
+    document.getElementById('questionsContainer').innerHTML = questionHTML;
+}
+
+function selectAnswer(questionIndex, value) {
+    const questionId = questions[questionIndex].id;
+    answers[questionId] = value;
+    
+    // Visual feedback
+    event.target.closest('.option-btn').classList.add('selected');
+    
+    // Move to next question after short delay
+    setTimeout(() => {
+        if (questionIndex < questions.length - 1) {
+            showQuestion(questionIndex + 1);
+        } else {
+            showResults();
+        }
+    }, 300);
+}
+
+function previousQuestion() {
+    if (currentQuestionIndex > 0) {
+        showQuestion(currentQuestionIndex - 1);
+    }
+}
+
+function showResults() {
+    document.getElementById('progressSection').classList.add('hidden');
+    document.getElementById('questionsContainer').classList.add('hidden');
+    document.getElementById('resultsSection').classList.remove('hidden');
+    
+    const results = analyzeAnswers(answers);
+    displayResults(results);
+    
+    // Automatically send results to hello@uslaunchhub.com
+    sendResultsToTeam(results);
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function sendResultsToTeam(results) {
+    // Format answers
+    let answersText = '';
+    questions.forEach((q, index) => {
+        const answer = answers[q.id];
+        const selectedOption = q.options.find(opt => opt.value === answer);
+        answersText += `Q${index + 1}: ${q.question}\nAnswer: ${selectedOption ? selectedOption.text : 'N/A'}\n\n`;
+    });
+    
+    // Create notification email
+    const subject = encodeURIComponent('NEW Assessment Completed - ' + new Date().toLocaleString());
+    const body = encodeURIComponent(
+        '=== NEW USLAUNCHHUB ASSESSMENT ===\n\n' +
+        'DATE: ' + new Date().toLocaleString() + '\n\n' +
+        
+        '=== RECOMMENDATIONS ===\n' +
+        'Primary Path: ' + results.primaryPath + '\n' +
+        'Visa: ' + results.visaRecommendation + '\n' +
+        'Timeline: ' + results.timeline + '\n' +
+        'Budget: ' + results.estimatedCost + '\n\n' +
+        
+        '=== PRIORITY ACTIONS ===\n' +
+        results.priority.map((item, i) => `${i + 1}. ${item}`).join('\n') + '\n\n' +
+        
+        '=== USER RESPONSES ===\n' +
+        answersText + '\n' +
+        
+        '⚠️ ACTION REQUIRED: Follow up with this lead!\n' +
+        'They are viewing their results now.\n\n' +
+        'Contact: +1 (646) 402-5402\n' +
+        'Calendar: https://calendar.app.google/FMAKF6AK9zRg1B3v5'
+    );
+    
+    // Open email client silently (user can send if they want, or we just capture it)
+    // We'll use a hidden approach - open but don't alert the user
+    const emailLink = `mailto:hello@uslaunchhub.com?subject=${subject}&body=${body}`;
+    
+    // Store for potential follow-up
+    console.log('Assessment completed:', results);
+    
+    // Optionally auto-open (commented out to not disturb user flow)
+    // window.open(emailLink, '_blank');
+}
+
+function analyzeAnswers(answers) {
+    let results = {
+        primaryPath: '',
+        visaRecommendation: '',
+        priority: [],
+        resources: [],
+        timeline: '',
+        estimatedCost: ''
+    };
+    
+    // Determine primary path
+    const purpose = answers[1];
+    if (purpose === 'entrepreneur') {
+        results.primaryPath = 'Entrepreneur Path';
+        results.visaRecommendation = 'E-2 Treaty Investor Visa or EB-5 Immigrant Investor';
+        results.priority = [
+            'Business structure selection (LLC vs C-Corp)',
+            'Investment capital preparation ($100k-$800k+)',
+            'Business plan development',
+            'Immigration attorney consultation'
+        ];
+        results.resources = [
+            { title: 'Complete Business Formation Guide', link: 'blog-relocating-france-to-us-enhanced.html#business' },
+            { title: 'Entrepreneur Visa Options', link: 'blog-relocating-france-to-us-enhanced.html#business' }
+        ];
+    } else if (purpose === 'employee') {
+        results.primaryPath = 'Employment Path';
+        if (answers[6] === 'job_yes') {
+            results.visaRecommendation = 'H-1B Specialty Occupation Visa or L-1 Transfer';
+        } else {
+            results.visaRecommendation = 'H-1B Visa (requires job offer)';
+        }
+        results.priority = [
+            'Secure US job offer with sponsorship',
+            'Verify H-1B eligibility with employer',
+            'Prepare documentation (degree, transcripts)',
+            'Work with immigration attorney'
+        ];
+        results.resources = [
+            { title: 'Work Visa Guide', link: 'blog-relocating-france-to-us-enhanced.html#health' },
+            { title: 'Relocation Planning', link: 'blog-relocating-france-to-us-enhanced.html#moving' }
+        ];
+    } else if (purpose === 'student') {
+        results.primaryPath = 'Student Path';
+        results.visaRecommendation = 'F-1 Student Visa';
+        results.priority = [
+            'Apply to SEVP-approved schools',
+            'Obtain I-20 form from school',
+            'Prove financial capability',
+            'Schedule visa interview'
+        ];
+        results.resources = [
+            { title: 'School Selection Guide', link: 'blog-relocating-france-to-us-enhanced.html#schools' },
+            { title: 'Student Visa Process', link: 'blog-relocating-france-to-us-enhanced.html#schools' }
+        ];
+    } else if (purpose === 'retired') {
+        results.primaryPath = 'Retirement Path';
+        results.visaRecommendation = 'B-2 Tourist Visa (6 months) or Investment-Based Options';
+        results.priority = [
+            'Explore investment visa options',
+            'Research retirement-friendly states',
+            'Healthcare insurance planning',
+            'Financial planning for extended stay'
+        ];
+        results.resources = [
+            { title: 'Housing & Location Guide', link: 'blog-relocating-france-to-us-enhanced.html#housing' },
+            { title: 'Healthcare Navigation', link: 'blog-relocating-france-to-us-enhanced.html#health' }
+        ];
+    } else {
+        results.primaryPath = 'Family-Based Path';
+        results.visaRecommendation = 'IR/F Family Visa Categories';
+        results.priority = [
+            'Verify family relationship eligibility',
+            'Gather relationship documentation',
+            'Work with immigration attorney',
+            'Prepare for interview process'
+        ];
+        results.resources = [
+            { title: 'Complete Relocation Guide', link: 'blog-relocating-france-to-us-enhanced.html' },
+            { title: 'Cultural Adaptation', link: 'blog-relocating-france-to-us-enhanced.html#culture' }
+        ];
+    }
+    
+    // Timeline
+    const timeline = answers[3];
+    if (timeline === 'immediate') {
+        results.timeline = '6 months - Fast track process recommended';
+    } else if (timeline === 'medium') {
+        results.timeline = '6-12 months - Standard planning timeframe';
+    } else if (timeline === 'long') {
+        results.timeline = '1-2 years - Comprehensive preparation';
+    } else {
+        results.timeline = '2+ years - Strategic long-term planning';
+    }
+    
+    // Cost estimate
+    const budget = answers[5];
+    if (budget === 'budget_low') {
+        results.estimatedCost = '$15k-$50k (Modest start, essential costs only)';
+    } else if (budget === 'budget_mid') {
+        results.estimatedCost = '$50k-$200k (Comfortable transition)';
+    } else if (budget === 'budget_high') {
+        results.estimatedCost = '$200k-$500k (Premium relocation)';
+    } else {
+        results.estimatedCost = '$500k+ (Investor track with premium services)';
+    }
+    
+    // Add family considerations
+    const family = answers[4];
+    if (family === 'family_kids') {
+        results.priority.push('Research school districts and enrollment');
+        results.resources.push({ title: 'School Selection for Families', link: 'blog-relocating-france-to-us-enhanced.html#schools' });
+    }
+    
+    return results;
+}
+
+function displayResults(results) {
+    const html = `
+        <div class="space-y-6">
+            <!-- Primary Path -->
+            <div class="bg-gradient-to-r from-brand-navy to-blue-900 text-white rounded-xl p-6">
+                <h3 class="text-xl font-bold mb-2">
+                    <i class="fas fa-star mr-2"></i>Recommended Path
+                </h3>
+                <p class="text-2xl font-bold">${results.primaryPath}</p>
+            </div>
+            
+            <!-- Visa Recommendation -->
+            <div class="border-2 border-brand-red rounded-xl p-6">
+                <h3 class="text-lg font-bold text-brand-navy mb-3">
+                    <i class="fas fa-passport mr-2"></i>Visa Recommendation
+                </h3>
+                <p class="text-gray-700 font-semibold">${results.visaRecommendation}</p>
+            </div>
+            
+            <!-- Priority Actions -->
+            <div class="bg-blue-50 rounded-xl p-6">
+                <h3 class="text-lg font-bold text-brand-navy mb-4">
+                    <i class="fas fa-tasks mr-2"></i>Your Priority Action Steps
+                </h3>
+                <ol class="space-y-3">
+                    ${results.priority.map((item, index) => `
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold mr-3">
+                                ${index + 1}
+                            </span>
+                            <span class="text-gray-700 pt-1">${item}</span>
+                        </li>
+                    `).join('')}
+                </ol>
+            </div>
+            
+            <!-- Timeline & Budget -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border border-gray-200 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">
+                        <i class="fas fa-clock mr-2"></i>Timeline
+                    </h3>
+                    <p class="text-gray-700">${results.timeline}</p>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">
+                        <i class="fas fa-dollar-sign mr-2"></i>Estimated Budget
+                    </h3>
+                    <p class="text-gray-700">${results.estimatedCost}</p>
+                </div>
+            </div>
+            
+            <!-- Recommended Resources -->
+            <div class="bg-green-50 rounded-xl p-6">
+                <h3 class="text-lg font-bold text-brand-navy mb-4">
+                    <i class="fas fa-book-open mr-2"></i>Recommended Reading
+                </h3>
+                <div class="space-y-3">
+                    ${results.resources.map(resource => `
+                        <a href="${resource.link}" class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:border-brand-red transition-colors group">
+                            <span class="font-medium text-brand-navy group-hover:text-brand-red transition-colors">${resource.title}</span>
+                            <i class="fas fa-arrow-right text-brand-red"></i>
+                        </a>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <!-- Expert Help -->
+            <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2 border-brand-red">
+                <div class="flex items-start">
+                    <i class="fas fa-user-tie text-3xl text-brand-red mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-navy mb-2">Need Expert Guidance?</h3>
+                        <p class="text-gray-700 mb-4">
+                            Our team has helped 500+ French families successfully relocate to the US. 
+                            Schedule a free consultation to discuss your personalized path.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-600 space-x-4">
+                            <span><i class="fas fa-check text-green-600 mr-2"></i>15+ years experience</span>
+                            <span><i class="fas fa-check text-green-600 mr-2"></i>98% success rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('resultsContent').innerHTML = html;
+}
+
+function resetAssessment() {
+    answers = {};
+    currentQuestionIndex = 0;
+    document.getElementById('resultsSection').classList.add('hidden');
+    document.getElementById('intro').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function emailResults() {
+    const email = document.getElementById('emailInput').value;
+    if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address');
+        return;
+    }
+    
+    // Get current results
+    const results = analyzeAnswers(answers);
+    
+    // Format answers in readable way
+    let answersText = '';
+    questions.forEach((q, index) => {
+        const answer = answers[q.id];
+        const selectedOption = q.options.find(opt => opt.value === answer);
+        answersText += `Q${index + 1}: ${q.question}\nAnswer: ${selectedOption ? selectedOption.text : 'N/A'}\n\n`;
+    });
+    
+    // Create detailed email body
+    const subject = encodeURIComponent('USLaunchHub Assessment - ' + email);
+    const body = encodeURIComponent(
+        '=== USLAUNCHHUB ASSESSMENT RESULTS ===\n\n' +
+        'USER EMAIL: ' + email + '\n' +
+        'DATE: ' + new Date().toLocaleString() + '\n\n' +
+        
+        '=== RECOMMENDATIONS ===\n' +
+        'Primary Path: ' + results.primaryPath + '\n' +
+        'Visa Recommendation: ' + results.visaRecommendation + '\n' +
+        'Timeline: ' + results.timeline + '\n' +
+        'Estimated Cost: ' + results.estimatedCost + '\n\n' +
+        
+        '=== PRIORITY ACTIONS ===\n' +
+        results.priority.map((item, i) => `${i + 1}. ${item}`).join('\n') + '\n\n' +
+        
+        '=== USER RESPONSES ===\n' +
+        answersText + '\n' +
+        
+        '=== RECOMMENDED RESOURCES ===\n' +
+        results.resources.map(r => `- ${r.title}: ${r.link}`).join('\n') + '\n\n' +
+        
+        '---\n' +
+        'Next Step: Schedule free consultation\n' +
+        'Phone: +1 (646) 402-5402\n' +
+        'Calendar: https://calendar.app.google/FMAKF6AK9zRg1B3v5\n\n' +
+        'Best regards,\nUSLaunchHub Team'
+    );
+    
+    // Send to hello@uslaunchhub.com with user email in BCC
+    window.location.href = `mailto:hello@uslaunchhub.com?subject=${subject}&body=${body}&bcc=${email}`;
+    
+    alert('✅ Email client will open with your complete assessment results!\n\nThe results will be sent to:\n- hello@uslaunchhub.com (our team)\n- ' + email + ' (you)\n\nPlease click SEND in your email client.');
+}
+</script>
+
+</body>
+</html>

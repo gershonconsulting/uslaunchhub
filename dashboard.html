@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - USLaunchHub | Gershon Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'gershon-blue': '#1e40af',
+                        'gershon-navy': '#1e293b',
+                        'gershon-gold': '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #1e293b 100%); }
+        .sidebar-gradient { background: linear-gradient(180deg, #1e293b 0%, #334155 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .progress-ring { transform: rotate(-90deg); }
+        .status-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+        .status-pending { background-color: #fef3c7; color: #92400e; }
+        .status-progress { background-color: #dbeafe; color: #1e40af; }
+        .status-completed { background-color: #d1fae5; color: #065f46; }
+        .status-overdue { background-color: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 sidebar-gradient text-white flex-shrink-0">
+        <div class="p-6">
+            <div class="flex items-center mb-8">
+                <img src="img/hero.png" alt="USLaunchHub" class="h-10 mr-3">
+                <div>
+                    <h1 class="text-lg font-bold">USLaunchHub</h1>
+                    <p class="text-xs opacity-80">Dashboard</p>
+                </div>
+            </div>
+            
+            <nav class="space-y-2">
+                <a href="#overview" class="flex items-center p-3 rounded-lg bg-white/10 text-white">
+                    <i class="fas fa-tachometer-alt mr-3"></i>Overview
+                </a>
+                <a href="#projects" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                    <i class="fas fa-project-diagram mr-3"></i>Projects
+                </a>
+                <a href="#documents" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                    <i class="fas fa-folder-open mr-3"></i>Documents
+                </a>
+                <a href="#timeline" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                    <i class="fas fa-calendar-alt mr-3"></i>Timeline
+                </a>
+                <a href="#messages" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                    <i class="fas fa-envelope mr-3"></i>Messages
+                    <span class="ml-auto bg-red-500 text-xs px-2 py-1 rounded-full">3</span>
+                </a>
+                <a href="#support" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                    <i class="fas fa-headset mr-3"></i>Support
+                </a>
+                
+                <div class="border-t border-white/20 pt-2 mt-4">
+                    <a href="coming-from-france.html" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                        <i class="fas fa-globe-americas mr-3"></i>Coming From
+                    </a>
+                    <a href="partners.html" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                        <i class="fas fa-handshake mr-3"></i>Partners
+                    </a>
+                    <a href="index.html" class="flex items-center p-3 rounded-lg hover:bg-white/10 transition-colors">
+                        <i class="fas fa-home mr-3"></i>Home
+                    </a>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="absolute bottom-0 w-64 p-6">
+            <div class="bg-white/10 p-4 rounded-lg">
+                <div class="flex items-center mb-2">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=f59e0b&color=1e293b" class="w-10 h-10 rounded-full mr-3" alt="Profile">
+                    <div>
+                        <div class="font-medium text-sm">Sarah Johnson</div>
+                        <div class="text-xs opacity-80">EB-1A Applicant</div>
+                    </div>
+                </div>
+                <button class="w-full text-left text-sm opacity-80 hover:opacity-100 transition-opacity">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Sign Out
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 overflow-auto">
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 p-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-gershon-navy">Welcome back, Sarah</h1>
+                    <p class="text-gray-600">Here's what's happening with your immigration project</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-400 hover:text-gray-600 relative">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">2</span>
+                    </button>
+                    <button class="px-4 py-2 bg-gershon-blue text-white rounded-lg hover:bg-blue-800 transition-colors">
+                        <i class="fas fa-plus mr-2"></i>New Task
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="p-6">
+            <!-- Project Overview Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="card-hover bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex items-center">
+                        <div class="bg-gershon-blue text-white w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-2xl font-bold text-gershon-navy">73%</div>
+                            <div class="text-sm text-gray-600">Overall Progress</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex items-center">
+                        <div class="bg-gershon-gold text-white w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-2xl font-bold text-gershon-navy">3</div>
+                            <div class="text-sm text-gray-600">Pending Tasks</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex items-center">
+                        <div class="bg-green-600 text-white w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-2xl font-bold text-gershon-navy">156</div>
+                            <div class="text-sm text-gray-600">Days Active</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex items-center">
+                        <div class="bg-purple-600 text-white w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-2xl font-bold text-gershon-navy">24</div>
+                            <div class="text-sm text-gray-600">Documents</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Current Project Status -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+                        <h2 class="text-xl font-bold text-gershon-navy mb-6">EB-1A Extraordinary Ability Petition</h2>
+                        
+                        <!-- Progress Bar -->
+                        <div class="mb-6">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>Project Progress</span>
+                                <span>Step 4 of 6</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-gradient-to-r from-gershon-blue to-gershon-gold h-4 rounded-full transition-all duration-500" style="width: 73%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project Phases -->
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                                <i class="fas fa-check-circle text-green-600 text-xl mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">Initial Consultation</div>
+                                    <div class="text-sm text-gray-600">Completed on March 15, 2024</div>
+                                </div>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                                <i class="fas fa-check-circle text-green-600 text-xl mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">Document Collection</div>
+                                    <div class="text-sm text-gray-600">Completed on April 22, 2024</div>
+                                </div>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+                                <i class="fas fa-check-circle text-green-600 text-xl mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">I-140 Form Preparation</div>
+                                    <div class="text-sm text-gray-600">Completed on May 8, 2024</div>
+                                </div>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                                <i class="fas fa-clock text-blue-600 text-xl mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">USCIS Review Process</div>
+                                    <div class="text-sm text-gray-600">Submitted May 15, 2024 - In Progress</div>
+                                </div>
+                                <span class="status-badge status-progress">In Review</span>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border-l-4 border-gray-300">
+                                <i class="fas fa-hourglass-half text-gray-400 text-xl mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">Interview Preparation</div>
+                                    <div class="text-sm text-gray-600">Pending USCIS response</div>
+                                </div>
+                                <span class="status-badge status-pending">Pending</span>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg border-l-4 border-gray-300">
+                                <i class="fas fa-trophy text-gray-400 text-xl mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900">Final Approval</div>
+                                    <div class="text-sm text-gray-600">Final step in process</div>
+                                </div>
+                                <span class="status-badge status-pending">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-lg font-bold text-gershon-navy mb-4">Recent Activities</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fas fa-file-upload text-blue-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">Document uploaded: Updated CV</div>
+                                    <div class="text-xs text-gray-500">2 hours ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fas fa-comment text-green-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">Attorney comment added</div>
+                                    <div class="text-xs text-gray-500">1 day ago</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fas fa-calendar text-yellow-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">Meeting scheduled: Case review</div>
+                                    <div class="text-xs text-gray-500">3 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Content -->
+                <div class="space-y-6">
+                    <!-- Upcoming Tasks -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-lg font-bold text-gershon-navy mb-4">Upcoming Tasks</h3>
+                        <div class="space-y-4">
+                            <div class="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                                <div class="font-medium text-sm">Review Attorney Feedback</div>
+                                <div class="text-xs text-gray-600 mt-1">Due: Tomorrow</div>
+                                <button class="text-xs text-blue-600 hover:text-blue-800 mt-2">Mark Complete</button>
+                            </div>
+                            
+                            <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                                <div class="font-medium text-sm">Upload Additional Evidence</div>
+                                <div class="text-xs text-gray-600 mt-1">Due: Oct 15, 2024</div>
+                                <button class="text-xs text-blue-600 hover:text-blue-800 mt-2">Upload Files</button>
+                            </div>
+                            
+                            <div class="p-3 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                                <div class="font-medium text-sm">Schedule Follow-up Call</div>
+                                <div class="text-xs text-gray-600 mt-1">Due: Oct 20, 2024</div>
+                                <button class="text-xs text-blue-600 hover:text-blue-800 mt-2">Schedule Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Chart -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-lg font-bold text-gershon-navy mb-4">Progress Overview</h3>
+                        <div class="relative">
+                            <canvas id="progressChart" width="200" height="200"></canvas>
+                        </div>
+                        <div class="mt-4 space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Completed</span>
+                                <span class="font-medium">73%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Remaining</span>
+                                <span class="font-medium">27%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Contact -->
+                    <div class="bg-gershon-navy text-white rounded-xl p-6">
+                        <h3 class="text-lg font-bold mb-4">Need Help?</h3>
+                        <p class="text-sm opacity-90 mb-4">Our USLaunchHub team is here to assist you 24/7</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone mr-2"></i>
+                                <span>+1 (646) 402-5402</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                <span>support@uslaunchhub.com</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 bg-gershon-gold text-gershon-navy py-2 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
+                            Start Live Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Initialize progress chart
+const ctx = document.getElementById('progressChart').getContext('2d');
+const progressChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Completed', 'Remaining'],
+        datasets: [{
+            data: [73, 27],
+            backgroundColor: ['#1e40af', '#e5e7eb'],
+            borderWidth: 0,
+            cutout: '70%'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+});
+
+// Add center text to doughnut chart
+Chart.register({
+    id: 'centerText',
+    beforeDraw: function(chart) {
+        const ctx = chart.ctx;
+        const centerX = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
+        const centerY = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 2;
+        
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.font = 'bold 24px Inter';
+        ctx.fillStyle = '#1e40af';
+        ctx.fillText('73%', centerX, centerY);
+        ctx.restore();
+    }
+});
+
+// Sidebar navigation
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('nav a').forEach(l => {
+            l.classList.remove('bg-white/10', 'text-white');
+            l.classList.add('hover:bg-white/10');
+        });
+        
+        // Add active class to clicked link
+        this.classList.add('bg-white/10', 'text-white');
+        this.classList.remove('hover:bg-white/10');
+        
+        // Here you would typically load different sections
+        console.log('Navigate to:', this.getAttribute('href'));
+    });
+});
+
+// Task completion handlers
+document.querySelectorAll('button').forEach(button => {
+    if (button.textContent.includes('Mark Complete') || 
+        button.textContent.includes('Upload Files') || 
+        button.textContent.includes('Schedule Now')) {
+        button.addEventListener('click', function() {
+            alert('This functionality will be implemented in the next phase. Please contact your project manager for assistance.');
+        });
+    }
+});
+
+// Live chat handler
+document.querySelector('button').addEventListener('click', function() {
+    if (this.textContent.includes('Start Live Chat')) {
+        alert('Live chat system will be integrated. For immediate assistance, please call +1 (646) 402-5402.');
+    }
+});
+</script>
+
+</body>
+</html>

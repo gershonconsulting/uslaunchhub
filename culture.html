@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture et adaptation aux USA | USLaunchHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { 'inter': ['Inter', 'sans-serif'] }, colors: { 'brand-navy': '#1c3664', 'brand-red': '#e31837', 'brand-dark': '#0a1628' }}}}
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .section-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #1e40af 0%, #1e293b 100%); border-radius: 12px; display: flex; align-items: center; justify-center; color: white; font-size: 24px; margin-bottom: 1.5rem; }
+        .tip-box { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-left: 4px solid #1e40af; }
+        .success-box { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 4px solid #059669; }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+            <a href="index.html"><img src="img/hero.png" alt="USLaunchHub" class="h-16 md:h-20"></a>
+            <nav class="hidden md:flex items-center space-x-6 text-brand-navy">
+                <div class="relative group">
+                    <button class="hover:text-brand-red transition-colors font-medium flex items-center">
+                        Coming From <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="coming-from-france.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <span class="text-gray-700 hover:text-brand-red">France</span>
+                        </a>
+                        <a href="coming-from-uk.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <span class="text-gray-700 hover:text-brand-coral">United Kingdom</span>
+                        </a>
+                        <a href="coming-from-germany.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Germany</span>
+                        </a>
+                        <a href="coming-from-ukraine.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇺🇦</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Ukraine</span>
+                        </a>
+                        <a href="coming-from-russia.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇷🇺</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Russia</span>
+                        </a>
+                        <a href="coming-from-poland.html" class="flex items-center px-4 py-3 hover:bg-gray-50">
+                            <span class="text-2xl mr-3">🇵🇱</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Poland</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="partners.html" class="hover:text-brand-red transition-colors font-medium">
+                    <i class="fas fa-handshake mr-1"></i>Partners
+                </a>
+                <a href="index.html" class="hover:text-brand-red transition-colors font-medium"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="index.html#resources" class="hover:text-brand-red transition-colors font-medium">More Resources</a>
+            </nav>
+            <button class="md:hidden text-brand-navy" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 pb-4">
+            <div class="space-y-3 pt-4">
+                <div class="border-b pb-3 mb-3">
+                    <p class="text-xs text-gray-500 uppercase mb-2 px-4">Coming From</p>
+                    <a href="coming-from-france.html" class="flex items-center px-4 py-2 hover:bg-gray-50">
+                        <span class="text-2xl mr-3">🇫🇷</span>
+                        <span class="text-brand-navy">France</span>
+                    </a>
+                </div>
+                <a href="partners.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">
+                    <i class="fas fa-handshake mr-2"></i>Partners
+                </a>
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="index.html#resources" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">More Resources</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+}
+</script>
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-12">
+        <div class="flex items-center space-x-2 text-sm text-gray-600 mb-4"><i class="fas fa-folder"></i><span>Guide Culture & Adaptation</span></div>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Culture et adaptation aux États-Unis</h1>
+        <p class="text-xl text-gray-600"><em>Culture Shock and Adapting to American Life</em></p>
+    </header>
+
+    <nav class="bg-white rounded-xl border border-gray-200 p-6 mb-12">
+        <h2 class="text-lg font-bold text-brand-navy mb-4"><i class="fas fa-list mr-2"></i>Plus de guides</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <a href="health.html" class="hover:text-brand-red">🏥 Santé & Assurance</a>
+            <a href="credit.html" class="hover:text-brand-red">💳 Score de crédit</a>
+            <a href="schools.html" class="hover:text-brand-red">🎓 Choisir une école</a>
+            <a href="housing.html" class="hover:text-brand-red">🏠 Se loger aux USA</a>
+            <a href="business.html" class="hover:text-brand-red">💼 Start a Business</a>
+            <a href="moving.html" class="hover:text-brand-red">🚚 Déménagement international</a>
+        </div>
+    </nav>
+
+    <section class="mb-16">
+        <div class="section-icon"><i class="fas fa-globe-americas"></i></div>
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">🇺🇸 S'adapter à la culture américaine</h2>
+        
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 mb-6">
+                Au-delà des aspects pratiques (visa, logement, santé), s'installer aux États-Unis signifie s'adapter à une culture profondément différente de la France. 
+                Communication directe, optimisme omniprésent, individualisme assumé... découvrez les clés pour réussir votre intégration.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4">Les différences culturelles majeures</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl border-l-4 border-blue-600">
+                    <h4 class="font-bold text-brand-navy mb-3">🗣️ Communication</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><strong>🇺🇸 USA :</strong> Directe, positive, "small talk" important</p>
+                        <p><strong>🇫🇷 France :</strong> Plus nuancée, critique, débat intellectuel</p>
+                        <p class="text-xs text-gray-600 mt-2">
+                            <strong>Conseil :</strong> Évitez le sarcasme français, soyez explicite et enthousiaste
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border-l-4 border-purple-600">
+                    <h4 class="font-bold text-brand-navy mb-3">💼 Travail</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><strong>🇺🇸 USA :</strong> Culture du résultat, networking crucial, longues heures</p>
+                        <p><strong>🇫🇷 France :</strong> Équilibre vie/travail, vacances sacrées</p>
+                        <p class="text-xs text-gray-600 mt-2">
+                            <strong>Attention :</strong> 2 semaines de vacances/an standard (vs 5 en France)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border-l-4 border-green-600">
+                    <h4 class="font-bold text-brand-navy mb-3">🤝 Relations sociales</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><strong>🇺🇸 USA :</strong> Amitiés rapides, superficielles au début, "Let's grab coffee!"</p>
+                        <p><strong>🇫🇷 France :</strong> Amitiés lentes mais profondes</p>
+                        <p class="text-xs text-gray-600 mt-2">
+                            <strong>Astuce :</strong> Rejoignez clubs, associations, groupes français expatriés
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border-l-4 border-red-600">
+                    <h4 class="font-bold text-brand-navy mb-3">💰 Argent</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><strong>🇺🇸 USA :</strong> Parler d'argent normal, salaires publics</p>
+                        <p><strong>🇫🇷 France :</strong> Sujet tabou, discrétion</p>
+                        <p class="text-xs text-gray-600 mt-2">
+                            <strong>Tip culture :</strong> 15-20% obligatoire restaurants, taxis, coiffeurs
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4">Chocs culturels courants et comment les gérer</h3>
+
+            <div class="space-y-4 mb-8">
+                <div class="bg-yellow-50 p-5 rounded-xl border-l-4 border-yellow-600">
+                    <h5 class="font-bold text-gray-900 mb-2">😊 L'optimisme et le sourire permanent</h5>
+                    <p class="text-sm text-gray-700 mb-2">
+                        Les Américains sourient constamment et disent "How are you?" sans attendre de vraie réponse. 
+                        Répondez toujours "Good, and you?" même si votre journée est horrible.
+                    </p>
+                    <p class="text-xs text-gray-600"><strong>Adaptation :</strong> Adoptez le "fake it till you make it" - l'attitude positive est valorisée</p>
+                </div>
+
+                <div class="bg-blue-50 p-5 rounded-xl border-l-4 border-blue-600">
+                    <h5 class="font-bold text-gray-900 mb-2">🚗 Dépendance à la voiture</h5>
+                    <p class="text-sm text-gray-700 mb-2">
+                        Hors NYC/SF/Chicago, impossible de vivre sans voiture. Tout est conçu pour l'automobile : drive-throughs, parkings géants, suburbs étalées.
+                    </p>
+                    <p class="text-xs text-gray-600"><strong>Solution :</strong> Permis international valide 1 an, puis passez permis américain (plus facile qu'en France!)</p>
+                </div>
+
+                <div class="bg-red-50 p-5 rounded-xl border-l-4 border-red-600">
+                    <h5 class="font-bold text-gray-900 mb-2">🏥 Système de santé complexe</h5>
+                    <p class="text-sm text-gray-700 mb-2">
+                        Pas de médecin généraliste accessible sans rendez-vous. Urgences = $$$. Insurance networks, copays, deductibles... tout est compliqué.
+                    </p>
+                    <p class="text-xs text-gray-600"><strong>Prévention :</strong> Choisissez bien votre assurance, étudiez le plan, trouvez PCP (Primary Care Physician) rapidement</p>
+                </div>
+
+                <div class="bg-purple-50 p-5 rounded-xl border-l-4 border-purple-600">
+                    <h5 class="font-bold text-gray-900 mb-2">🍔 Portions géantes et malbouffe omniprésente</h5>
+                    <p class="text-sm text-gray-700 mb-2">
+                        Portions 2-3x plus grandes qu'en France. Fast-food partout. Difficile de trouver pain/fromage français.
+                    </p>
+                    <p class="text-xs text-gray-600"><strong>Conseil :</strong> Whole Foods, Trader Joe's pour qualité. Partagez plats au restaurant. Cuisinez maison.</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4">Les phases de l'adaptation (Culture Shock)</h3>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-500 text-white rounded-full w-20 h-8 flex items-center justify-center font-bold mr-4 text-sm">
+                            Mois 1-3
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">🌟 Lune de miel</p>
+                            <p class="text-sm text-gray-700">Tout est nouveau, excitant, fascinant. Tourisme, découvertes, émerveillement.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-red-500 text-white rounded-full w-20 h-8 flex items-center justify-center font-bold mr-4 text-sm">
+                            Mois 3-6
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">😔 Frustration</p>
+                            <p class="text-sm text-gray-700">Réalité s'installe. Nostalgie de France, irritation culturelle, solitude. Phase difficile mais NORMALE.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-500 text-white rounded-full w-20 h-8 flex items-center justify-center font-bold mr-4 text-sm">
+                            Mois 6-12
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">🔄 Ajustement</p>
+                            <p class="text-sm text-gray-700">Routines s'établissent, compréhension culturelle s'améliore, premiers vrais amis.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-500 text-white rounded-full w-20 h-8 flex items-center justify-center font-bold mr-4 text-sm">
+                            Année 2+
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">✅ Acceptation</p>
+                            <p class="text-sm text-gray-700">Vous vous sentez "chez vous". Identité biculturelle. Retours en France peuvent être difficiles!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4">Conseils pour une intégration réussie</h3>
+
+            <div class="success-box p-6 rounded-xl mb-8">
+                <h4 class="font-bold text-gray-900 mb-4"><i class="fas fa-star text-yellow-500 mr-2"></i>10 clés d'adaptation</h4>
+                <ol class="space-y-3 text-gray-800 text-sm">
+                    <li><strong>1. Apprenez l'anglais américain</strong> - Accent, expressions, slang différent de l'anglais britannique</li>
+                    <li><strong>2. Rejoignez communautés françaises</strong> - Alliance Française, groupes Facebook, Meetup</li>
+                    <li><strong>3. Faites du networking</strong> - LinkedIn actif, conférences, after-work, sports</li>
+                    <li><strong>4. Soyez ouvert d'esprit</strong> - Suspendez jugement, observez, apprenez</li>
+                    <li><strong>5. Explorez votre ville</strong> - Festivals, musées, restaurants, parcs</li>
+                    <li><strong>6. Restez connecté à la France</strong> - Mais ne vivez pas que dans le passé</li>
+                    <li><strong>7. Acceptez les différences</strong> - Pas meilleur ou pire, juste différent</li>
+                    <li><strong>8. Trouvez un mentor</strong> - Français expat + Américain bienveillant</li>
+                    <li><strong>9. Patience avec vous-même</strong> - Adaptation prend 1-2 ans minimum</li>
+                    <li><strong>10. Profitez de l'aventure</strong> - Opportunité unique de croissance personnelle</li>
+                </ol>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-brand-navy mb-4">Ressources communautaires</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div class="bg-gray-50 p-5 rounded-xl">
+                    <h5 class="font-bold text-brand-navy mb-2"><i class="fas fa-users text-blue-600 mr-2"></i>Français aux USA (Facebook)</h5>
+                    <p class="text-sm text-gray-700">Groupe 50,000+ membres, conseils, entraide, rencontres</p>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-xl">
+                    <h5 class="font-bold text-brand-navy mb-2"><i class="fas fa-globe text-red-600 mr-2"></i>Alliance Française</h5>
+                    <p class="text-sm text-gray-700">Centres culturels dans 130 villes US, événements, cours</p>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-xl">
+                    <h5 class="font-bold text-brand-navy mb-2"><i class="fas fa-handshake text-purple-600 mr-2"></i>Meetup.com</h5>
+                    <p class="text-sm text-gray-700">Groupes français expatriés, language exchange, activités</p>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-xl">
+                    <h5 class="font-bold text-brand-navy mb-2"><i class="fas fa-newspaper text-green-600 mr-2"></i>French Morning</h5>
+                    <p class="text-sm text-gray-700">Journal francophone, actualités communauté française USA</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</article>
+
+<footer class="bg-brand-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div><h3 class="font-bold text-lg mb-4">USLaunchHub</h3><p class="text-gray-300 text-sm">Votre partenaire pour une installation réussie aux États-Unis</p></div>
+            <div><h4 class="font-bold mb-4">Guides</h4><ul class="space-y-2 text-sm text-gray-300">
+                <li><a href="health.html" class="hover:text-white">Santé & Assurance</a></li>
+                <li><a href="credit.html" class="hover:text-white">Score de crédit</a></li>
+                <li><a href="housing.html" class="hover:text-white">Logement</a></li>
+                <li><a href="business.html" class="hover:text-white">Entreprise</a></li>
+            </ul></div>
+            <div><h4 class="font-bold mb-4">Contact</h4><p class="text-sm text-gray-300"><i class="fas fa-envelope mr-2"></i>hello@uslaunchhub.com</p></div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400"><p>&copy; 2024 USLaunchHub. All rights reserved.</p></div>
+    </div>
+</footer>
+
+</body>
+</html>

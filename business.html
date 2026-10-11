@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting a Business in the USA | USLaunchHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand-navy': '#1d3557',
+                        'brand-blue': '#457b9d',
+                        'brand-coral': '#e63946',
+                        'brand-light': '#f1faee',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="img/hero.png" alt="USLaunchHub" class="h-12">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-brand-navy">
+                <div class="relative group">
+                    <button class="hover:text-brand-coral transition-colors font-medium flex items-center">
+                        Coming From <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="coming-from-france.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <span class="text-gray-700 hover:text-brand-coral">France</span>
+                        </a>
+                        <a href="coming-from-uk.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <span class="text-gray-700 hover:text-brand-coral">United Kingdom</span>
+                        </a>
+                        <a href="coming-from-germany.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Germany</span>
+                        </a>
+                        <a href="coming-from-ukraine.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇺🇦</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Ukraine</span>
+                        </a>
+                        <a href="coming-from-russia.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇷🇺</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Russia</span>
+                        </a>
+                        <a href="coming-from-poland.html" class="flex items-center px-4 py-3 hover:bg-gray-50">
+                            <span class="text-2xl mr-3">🇵🇱</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Poland</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="partners.html" class="hover:text-brand-coral transition-colors font-medium">
+                    <i class="fas fa-handshake mr-1"></i>Partners
+                </a>
+                
+                <a href="index.html" class="hover:text-brand-coral transition-colors font-medium">Home</a>
+                <a href="housing.html" class="hover:text-brand-coral">🏠 Housing</a>
+                <a href="health.html" class="hover:text-brand-coral">💊 Healthcare</a>
+                <a href="schools.html" class="hover:text-brand-coral">🎓 Schools</a>
+                <a href="https://calendar.app.google/FMAKF6AK9zRg1B3v5" target="_blank" class="px-4 py-2 bg-brand-coral text-white rounded-lg hover:bg-red-600">Book Call</a>
+            </nav>
+            <button class="md:hidden text-brand-navy" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 pb-4">
+            <div class="space-y-3 pt-4">
+                <div class="border-b pb-3 mb-3">
+                    <p class="text-xs text-gray-500 uppercase mb-2 px-4">Coming From</p>
+                    <a href="coming-from-france.html" class="flex items-center px-4 py-2 hover:bg-gray-50">
+                        <span class="text-2xl mr-3">🇫🇷</span>
+                        <span class="text-brand-navy">France</span>
+                    </a>
+                </div>
+                <a href="partners.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">
+                    <i class="fas fa-handshake mr-2"></i>Partners
+                </a>
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">Home</a>
+                <a href="housing.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">🏠 Housing</a>
+                <a href="health.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">💊 Healthcare</a>
+                <a href="schools.html" class="block px-4 py-2 hover:bg-gray-50 text-brand-navy">🎓 Schools</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+}
+</script>
+
+<!-- Content from blog-relocating-france-to-us-enhanced.html business section -->
+<section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-brand-coral text-white rounded-xl flex items-center justify-center text-2xl mr-4">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-brand-navy">Starting a Business in the USA</h1>
+                    <p class="text-gray-600">Your complete guide to American entrepreneurship</p>
+                </div>
+            </div>
+
+            <div class="prose max-w-none">
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-8">
+                    <h2 class="font-bold text-brand-navy mb-2 text-xl">
+                        <i class="fas fa-rocket text-green-600 mr-2"></i>Why Start a Business in the USA?
+                    </h2>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✅ <strong>Largest consumer market</strong> - 330 million potential customers</li>
+                        <li>✅ <strong>Access to capital</strong> - VCs, angel investors, business loans</li>
+                        <li>✅ <strong>Business-friendly environment</strong> - Easy incorporation, low barriers</li>
+                        <li>✅ <strong>Immigration pathway</strong> - E-2 visa or EB-5 options for foreign nationals</li>
+                        <li>✅ <strong>Innovation ecosystem</strong> - Silicon Valley, tech hubs, networking opportunities</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Choose Your Business Structure</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-brand-coral transition-colors">
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">
+                            <i class="fas fa-building text-brand-blue mr-2"></i>LLC (Most Popular)
+                        </h3>
+                        <p class="text-gray-700 mb-4">Limited Liability Company - Best for most small businesses</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Protection:</strong> Personal assets protected from business liabilities</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Flexibility:</strong> Simple management, pass-through taxation</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Cost:</strong> $50-500 to form (varies by state)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Best for:</strong> Small businesses, consultants, e-commerce</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-brand-coral transition-colors">
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">
+                            <i class="fas fa-rocket text-brand-coral mr-2"></i>C-Corporation
+                        </h3>
+                        <p class="text-gray-700 mb-4">Best for startups seeking venture capital funding</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Funding:</strong> Can issue stock, attract investors easily</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Scale:</strong> Ideal for high-growth companies</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-600 mr-2 mt-1"></i>
+                                <span><strong>Complexity:</strong> More regulations, double taxation</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Best for:</strong> Tech startups, companies seeking VC funding</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-brand-coral transition-colors">
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">
+                            <i class="fas fa-user text-brand-blue mr-2"></i>Sole Proprietorship
+                        </h3>
+                        <p class="text-gray-700 mb-4">Simplest form - you and your business are one legal entity</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Simple:</strong> No formal registration required in most states</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Low cost:</strong> Minimal startup costs</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-600 mr-2 mt-1"></i>
+                                <span><strong>Risk:</strong> Personal assets at risk for business debts</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-times text-red-600 mr-2 mt-1"></i>
+                                <span><strong>Note:</strong> Not recommended for immigrants seeking visa sponsorship</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-brand-coral transition-colors">
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">
+                            <i class="fas fa-handshake text-brand-blue mr-2"></i>Partnership
+                        </h3>
+                        <p class="text-gray-700 mb-4">For businesses with multiple owners sharing responsibilities</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Shared:</strong> Split profits, losses, and responsibilities</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Types:</strong> General or Limited Partnership available</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-yellow-600 mr-2 mt-1"></i>
+                                <span><strong>Important:</strong> Requires detailed partnership agreement</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Best for:</strong> Professional services, family businesses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Step-by-Step: Forming Your LLC</h2>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            1
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Choose Your State</h3>
+                            <p class="text-gray-700 text-sm">
+                                <strong>Delaware:</strong> Business-friendly laws, strong privacy protection<br>
+                                <strong>Wyoming:</strong> Low taxes, no state income tax, minimal reporting<br>
+                                <strong>Your operating state:</strong> Often simplest if you'll physically operate there
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Name Your Business</h3>
+                            <p class="text-gray-700 text-sm">
+                                Check name availability with your state's Secretary of State office. 
+                                Name must include "LLC" or "Limited Liability Company". Avoid names too similar to existing businesses.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Appoint a Registered Agent</h3>
+                            <p class="text-gray-700 text-sm">
+                                A US-based person or company to receive legal documents on behalf of your business. 
+                                Services like Northwest Registered Agent or Incfile typically cost $100-200/year.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">File Articles of Organization</h3>
+                            <p class="text-gray-700 text-sm">
+                                Submit formation documents to your state's Secretary of State (filing fee: $50-500). 
+                                Can usually be done online. Processing takes 1-2 weeks in most states.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            5
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Get Your EIN (Tax ID Number)</h3>
+                            <p class="text-gray-700 text-sm">
+                                Apply for Employer Identification Number from IRS (free at IRS.gov). 
+                                Required for opening business bank accounts, filing taxes, and hiring employees.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            6
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Create an Operating Agreement</h3>
+                            <p class="text-gray-700 text-sm">
+                                Internal document outlining ownership percentages, management structure, and operating procedures. 
+                                Not always legally required but highly recommended for protection.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            7
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Open a Business Bank Account</h3>
+                            <p class="text-gray-700 text-sm">
+                                Keep personal and business finances separate. Major banks: Chase, Bank of America, Wells Fargo. 
+                                Online options for international founders: Mercury, Brex, Wise Business.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg border-l-4 border-brand-coral">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-coral text-white rounded-full flex items-center justify-center font-bold">
+                            8
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy mb-2">Obtain Licenses & Permits</h3>
+                            <p class="text-gray-700 text-sm">
+                                Requirements vary by industry, state, and locality. Check with your county clerk's office 
+                                or use the SBA.gov license lookup tool to find what you need.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-brand-navy mb-4 mt-8">Cost Breakdown</h2>
+                
+                <div class="overflow-x-auto mb-8">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-brand-navy">Expense Item</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-brand-navy">Cost Range</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-brand-navy">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">LLC Formation Filing Fee</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">$50 - $500</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">One-time</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Registered Agent Service</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">$100 - $300</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">Annual</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">State Annual Report/Fee</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">$50 - $800</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">Annual</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Business Licenses & Permits</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">$50 - $400</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">Annual</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Accounting/Bookkeeping Services</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">$100 - $500</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">Monthly</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Business Insurance</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">$500 - $2,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">Annual</td>
+                            </tr>
+                            <tr class="bg-brand-coral/10">
+                                <td class="px-6 py-4 text-sm font-bold text-brand-navy">Estimated Total First Year</td>
+                                <td class="px-6 py-4 text-sm font-bold text-brand-navy">$1,500 - $5,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-6">
+                    <h3 class="font-bold text-brand-navy mb-2 text-lg">
+                        <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>Important for E-2 Visa Applicants
+                    </h3>
+                    <p class="text-gray-700 mb-3">
+                        If you're planning to use your business for an E-2 Treaty Investor visa (available to citizens of treaty countries), you'll need:
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✅ <strong>Substantial investment:</strong> Typically $100,000 - $200,000 minimum</li>
+                        <li>✅ <strong>Active business:</strong> Not just passive investment (real estate alone doesn't qualify)</li>
+                        <li>✅ <strong>Job creation:</strong> Must plan to hire US workers</li>
+                        <li>✅ <strong>Controlling interest:</strong> Own at least 50% of the business</li>
+                        <li>✅ <strong>Detailed business plan:</strong> Professional 3-5 year financial projections required</li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-brand-navy text-white py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <img src="img/hero.png" alt="USLaunchHub" class="h-12 mx-auto mb-4">
+        <p class="text-white/80 mb-4">© 2024 USLaunchHub by Gershon Consulting. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="index.html" class="hover:text-brand-coral transition-colors">Home</a>
+            <a href="housing.html" class="hover:text-brand-coral transition-colors">Housing</a>
+            <a href="health.html" class="hover:text-brand-coral transition-colors">Healthcare</a>
+            <a href="schools.html" class="hover:text-brand-coral transition-colors">Schools</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

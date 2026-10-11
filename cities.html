@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YLLKNEP3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0YLLKNEP3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best US Cities for Immigrants - Cost of Living & Analysis | USLaunchHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-navy': '#1d3557',
+                        'brand-blue': '#457b9d',
+                        'brand-coral': '#e63946',
+                        'brand-light': '#f1faee',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); }
+        .city-card { transition: all 0.3s ease; border-left: 4px solid transparent; }
+        .city-card:hover { transform: translateY(-4px); border-left-color: #e63946; box-shadow: 0 20px 40px rgba(230, 57, 70, 0.15); }
+        .cost-bar { height: 8px; border-radius: 4px; transition: width 0.5s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+
+<!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <a href="index.html" class="flex items-center">
+                <img src="img/hero.png" alt="USLaunchHub" class="h-10 mr-3">
+                <div>
+                    <div class="text-lg font-bold text-brand-navy">USLaunchHub</div>
+                    <div class="text-xs text-gray-600">City Comparison</div>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-brand-coral transition-colors font-medium flex items-center">
+                        Coming From <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="coming-from-france.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇫🇷</span>
+                            <span class="text-gray-700 hover:text-brand-coral">France</span>
+                        </a>
+                        <a href="coming-from-uk.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇬🇧</span>
+                            <span class="text-gray-700 hover:text-brand-coral">United Kingdom</span>
+                        </a>
+                        <a href="coming-from-germany.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇩🇪</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Germany</span>
+                        </a>
+                        <a href="coming-from-ukraine.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇺🇦</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Ukraine</span>
+                        </a>
+                        <a href="coming-from-russia.html" class="flex items-center px-4 py-3 hover:bg-gray-50 border-b">
+                            <span class="text-2xl mr-3">🇷🇺</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Russia</span>
+                        </a>
+                        <a href="coming-from-poland.html" class="flex items-center px-4 py-3 hover:bg-gray-50">
+                            <span class="text-2xl mr-3">🇵🇱</span>
+                            <span class="text-gray-700 hover:text-brand-coral">Poland</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="partners.html" class="text-gray-700 hover:text-brand-coral transition-colors font-medium">
+                    <i class="fas fa-handshake mr-1"></i>Partners
+                </a>
+                
+                <a href="index.html" class="text-gray-700 hover:text-brand-coral transition-colors">Home</a>
+                <a href="housing.html" class="text-gray-700 hover:text-brand-coral transition-colors">Housing</a>
+                <a href="schools.html" class="text-gray-700 hover:text-brand-coral transition-colors">Schools</a>
+                <a href="uslaunchhub.html" class="px-4 py-2 bg-brand-coral text-white rounded-lg hover:bg-red-600 transition-colors">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="gradient-bg text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-6">Best US Cities for Immigrants</h1>
+            <p class="text-xl text-brand-light max-w-3xl mx-auto">
+                Compare cost of living, job opportunities, quality of life, and immigrant communities 
+                across America's top destinations
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="py-8 bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-4 items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <label class="font-semibold text-gray-700">Filter by:</label>
+                <select id="regionFilter" class="border border-gray-300 rounded-lg px-4 py-2" onchange="filterCities()">
+                    <option value="all">All Regions</option>
+                    <option value="west">West Coast</option>
+                    <option value="east">East Coast</option>
+                    <option value="south">South</option>
+                    <option value="midwest">Midwest</option>
+                </select>
+                
+                <select id="costFilter" class="border border-gray-300 rounded-lg px-4 py-2" onchange="filterCities()">
+                    <option value="all">All Price Ranges</option>
+                    <option value="low">Low Cost</option>
+                    <option value="medium">Medium Cost</option>
+                    <option value="high">High Cost</option>
+                </select>
+            </div>
+            
+            <div class="text-sm text-gray-600">
+                <i class="fas fa-info-circle mr-2"></i>All costs are monthly averages for a family of 4
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cities Grid -->
+<section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="citiesGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Cities will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Cost Comparison Chart -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Cost of Living Comparison</h2>
+        <div class="bg-gray-50 rounded-2xl p-8">
+            <canvas id="costComparisonChart" style="height: 400px;"></canvas>
+        </div>
+        
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-blue-50 rounded-xl p-6">
+                <h4 class="font-bold text-brand-navy mb-2">💰 Most Affordable</h4>
+                <p class="text-2xl font-black text-brand-blue">Austin, TX</p>
+                <p class="text-sm text-gray-600 mt-2">$4,500-6,500/month for family of 4</p>
+            </div>
+            
+            <div class="bg-green-50 rounded-xl p-6">
+                <h4 class="font-bold text-brand-navy mb-2">⚖️ Best Value</h4>
+                <p class="text-2xl font-black text-green-600">Seattle, WA</p>
+                <p class="text-sm text-gray-600 mt-2">Great balance of cost and opportunities</p>
+            </div>
+            
+            <div class="bg-purple-50 rounded-xl p-6">
+                <h4 class="font-bold text-brand-navy mb-2">🚀 Most Opportunities</h4>
+                <p class="text-2xl font-black text-purple-600">San Francisco, CA</p>
+                <p class="text-sm text-gray-600 mt-2">Highest salaries, tech hub, diverse community</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Factors to Consider -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Important Factors to Consider</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="w-12 h-12 bg-brand-navy text-white rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-briefcase text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-navy mb-3">Job Market</h3>
+                <p class="text-gray-600">Consider industry presence, unemployment rates, and salary levels in your field.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="w-12 h-12 bg-brand-coral text-white rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-navy mb-3">Housing Costs</h3>
+                <p class="text-gray-600">Rent/mortgage, property taxes, and utilities vary dramatically by location.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="w-12 h-12 bg-brand-blue text-white rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-navy mb-3">Schools</h3>
+                <p class="text-gray-600">Quality of public schools, access to universities, and educational opportunities.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-navy mb-3">Community</h3>
+                <p class="text-gray-600">Size and activity of immigrant/expat communities from your country.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="w-12 h-12 bg-purple-600 text-white rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-cloud-sun text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-navy mb-3">Climate</h3>
+                <p class="text-gray-600">Weather patterns, seasons, and climate that matches your preferences.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="w-12 h-12 bg-orange-600 text-white rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-plane text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-navy mb-3">Transportation</h3>
+                <p class="text-gray-600">Public transit, airport access, and cost of car ownership.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 gradient-bg text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
+        <p class="text-xl text-brand-light mb-8">
+            Get personalized guidance on choosing the right city and navigating your immigration path
+        </p>
+        <div class="flex justify-center">
+            <a href="uslaunchhub.html" class="px-8 py-4 bg-brand-coral text-white font-bold rounded-xl hover:bg-red-600 transition-all">
+                <i class="fas fa-rocket mr-2"></i>Launch Your Immigration Journey
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-brand-navy text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <img src="img/hero.png" alt="USLaunchHub" class="h-12 mx-auto mb-4">
+        <p class="text-white/80 mb-4">© 2024 USLaunchHub by Gershon Consulting. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="index.html" class="hover:text-brand-coral transition-colors">Home</a>
+            <a href="uslaunchhub.html" class="hover:text-brand-coral transition-colors">Services</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// City data with comprehensive information
+const cities = [
+    {
+        name: "San Francisco Bay Area",
+        state: "California",
+        region: "west",
+        costLevel: "high",
+        housing: 3500,
+        utilities: 200,
+        groceries: 800,
+        transport: 400,
+        healthcare: 600,
+        total: 5500,
+        salary: 120000,
+        techJobs: "Excellent",
+        schools: "Excellent",
+        diversity: "Very High",
+        description: "Global tech hub with massive immigrant community, world-class universities, and unparalleled career opportunities.",
+        pros: ["Highest salaries", "Tech opportunities", "Diverse community", "Great weather", "Cultural activities"],
+        cons: ["Very expensive housing", "High cost of living", "Traffic congestion", "Competitive market"]
+    },
+    {
+        name: "New York City",
+        state: "New York",
+        region: "east",
+        costLevel: "high",
+        housing: 3200,
+        utilities: 180,
+        groceries: 750,
+        transport: 350,
+        healthcare: 550,
+        total: 5030,
+        salary: 100000,
+        techJobs: "Excellent",
+        schools: "Excellent",
+        diversity: "Very High",
+        description: "The ultimate melting pot with opportunities in every industry, exceptional public transit, and world-renowned culture.",
+        pros: ["Diverse job market", "Public transportation", "Cultural diversity", "No car needed", "International hub"],
+        cons: ["Very expensive", "Crowded", "Fast-paced", "Cold winters", "Small living spaces"]
+    },
+    {
+        name: "Austin",
+        state: "Texas",
+        region: "south",
+        costLevel: "medium",
+        housing: 1800,
+        utilities: 150,
+        groceries: 600,
+        transport: 350,
+        healthcare: 450,
+        total: 3350,
+        salary: 85000,
+        techJobs: "Excellent",
+        schools: "Very Good",
+        diversity: "High",
+        description: "Fast-growing tech hub with no state income tax, affordable living, and vibrant startup culture.",
+        pros: ["No state income tax", "Growing tech scene", "Lower cost of living", "Great food culture", "Warm weather"],
+        cons: ["Hot summers", "Growing traffic", "Limited public transit", "Rising costs"]
+    },
+    {
+        name: "Seattle",
+        state: "Washington",
+        region: "west",
+        costLevel: "high",
+        housing: 2400,
+        utilities: 170,
+        groceries: 700,
+        transport: 300,
+        healthcare: 500,
+        total: 4070,
+        salary: 110000,
+        techJobs: "Excellent",
+        schools: "Excellent",
+        diversity: "High",
+        description: "Major tech hub with Amazon, Microsoft, no state income tax, beautiful nature, and high quality of life.",
+        pros: ["High salaries", "No state income tax", "Beautiful nature", "Tech opportunities", "Good schools"],
+        cons: ["Rainy weather", "Expensive housing", "Traffic", "High cost of living"]
+    },
+    {
+        name: "Boston",
+        state: "Massachusetts",
+        region: "east",
+        costLevel: "high",
+        housing: 2600,
+        utilities: 190,
+        groceries: 720,
+        transport: 280,
+        healthcare: 550,
+        total: 4340,
+        salary: 95000,
+        techJobs: "Excellent",
+        schools: "Excellent",
+        diversity: "High",
+        description: "Education and biotech hub with world-class universities, strong healthcare sector, and historic charm.",
+        pros: ["Top universities", "Biotech hub", "Historic city", "Good public transit", "Four seasons"],
+        cons: ["Expensive housing", "Cold winters", "Old infrastructure", "High taxes"]
+    },
+    {
+        name: "Dallas",
+        state: "Texas",
+        region: "south",
+        costLevel: "medium",
+        housing: 1600,
+        utilities: 160,
+        groceries: 580,
+        transport: 380,
+        healthcare: 430,
+        total: 3150,
+        salary: 80000,
+        techJobs: "Very Good",
+        schools: "Good",
+        diversity: "High",
+        description: "Business-friendly environment with no state income tax, affordable living, and growing job market.",
+        pros: ["No state income tax", "Affordable housing", "Job opportunities", "Low cost of living", "Business friendly"],
+        cons: ["Hot summers", "Car dependent", "Limited public transit", "Sprawling city"]
+    },
+    {
+        name: "Denver",
+        state: "Colorado",
+        region: "midwest",
+        costLevel: "medium",
+        housing: 2000,
+        utilities: 160,
+        groceries: 650,
+        transport: 320,
+        healthcare: 480,
+        total: 3610,
+        salary: 88000,
+        techJobs: "Very Good",
+        schools: "Very Good",
+        diversity: "Moderate",
+        description: "Outdoor paradise with growing tech scene, excellent quality of life, and 300 days of sunshine.",
+        pros: ["Outdoor activities", "Sunny weather", "Growing economy", "Active lifestyle", "Great quality of life"],
+        cons: ["Rising costs", "Dry climate", "High altitude adjustment", "Increasing traffic"]
+    },
+    {
+        name: "Miami",
+        state: "Florida",
+        region: "south",
+        costLevel: "medium",
+        housing: 2200,
+        utilities: 180,
+        groceries: 680,
+        transport: 340,
+        healthcare: 470,
+        total: 3870,
+        salary: 75000,
+        techJobs: "Good",
+        schools: "Good",
+        diversity: "Very High",
+        description: "Latin American gateway with no state income tax, tropical climate, and strong international business presence.",
+        pros: ["No state income tax", "Warm weather", "Beach lifestyle", "Latin culture", "International business"],
+        cons: ["Hurricane risk", "High humidity", "Traffic congestion", "Lower tech salaries"]
+    }
+];
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+    displayCities(cities);
+    createComparisonChart();
+});
+
+// Display cities
+function displayCities(citiesToDisplay) {
+    const grid = document.getElementById('citiesGrid');
+    grid.innerHTML = '';
+    
+    citiesToDisplay.forEach(city => {
+        const costColor = city.costLevel === 'low' ? 'green' : city.costLevel === 'medium' ? 'yellow' : 'red';
+        
+        const card = `
+            <div class="city-card bg-white rounded-2xl p-6 shadow-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-navy">${city.name}</h3>
+                        <p class="text-gray-600">${city.state}</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-black text-brand-coral">$${city.total.toLocaleString()}</div>
+                        <div class="text-sm text-gray-600">per month</div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 mb-4">${city.description}</p>
+                
+                <!-- Cost Breakdown -->
+                <div class="space-y-3 mb-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-600">Housing</span>
+                            <span class="font-semibold">$${city.housing.toLocaleString()}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="cost-bar bg-brand-navy" style="width: ${(city.housing/city.total)*100}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-600">Groceries</span>
+                            <span class="font-semibold">$${city.groceries.toLocaleString()}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="cost-bar bg-brand-blue" style="width: ${(city.groceries/city.total)*100}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-600">Healthcare</span>
+                            <span class="font-semibold">$${city.healthcare.toLocaleString()}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="cost-bar bg-brand-coral" style="width: ${(city.healthcare/city.total)*100}%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Key Stats -->
+                <div class="grid grid-cols-3 gap-3 mb-4 p-4 bg-gray-50 rounded-xl">
+                    <div class="text-center">
+                        <div class="text-sm text-gray-600">Avg Salary</div>
+                        <div class="font-bold text-brand-navy">$${(city.salary/1000).toFixed(0)}K</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sm text-gray-600">Tech Jobs</div>
+                        <div class="font-bold text-brand-navy">${city.techJobs}</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sm text-gray-600">Schools</div>
+                        <div class="font-bold text-brand-navy">${city.schools}</div>
+                    </div>
+                </div>
+                
+                <!-- Pros and Cons -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold text-green-600 mb-2"><i class="fas fa-check-circle mr-1"></i>Pros</h4>
+                        <ul class="text-sm space-y-1">
+                            ${city.pros.slice(0, 3).map(pro => `<li class="text-gray-600">• ${pro}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-red-600 mb-2"><i class="fas fa-times-circle mr-1"></i>Cons</h4>
+                        <ul class="text-sm space-y-1">
+                            ${city.cons.slice(0, 3).map(con => `<li class="text-gray-600">• ${con}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+                
+                <button class="mt-4 w-full py-3 bg-brand-navy text-white rounded-lg hover:bg-brand-blue transition-colors font-semibold">
+                    <i class="fas fa-info-circle mr-2"></i>More Details
+                </button>
+            </div>
+        `;
+        
+        grid.innerHTML += card;
+    });
+}
+
+// Filter cities
+function filterCities() {
+    const region = document.getElementById('regionFilter').value;
+    const cost = document.getElementById('costFilter').value;
+    
+    let filtered = cities;
+    
+    if (region !== 'all') {
+        filtered = filtered.filter(city => city.region === region);
+    }
+    
+    if (cost !== 'all') {
+        filtered = filtered.filter(city => city.costLevel === cost);
+    }
+    
+    displayCities(filtered);
+}
+
+// Create comparison chart
+function createComparisonChart() {
+    const ctx = document.getElementById('costComparisonChart').getContext('2d');
+    
+    const sortedCities = [...cities].sort((a, b) => a.total - b.total);
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: sortedCities.map(c => c.name),
+            datasets: [{
+                label: 'Monthly Cost (Family of 4)',
+                data: sortedCities.map(c => c.total),
+                backgroundColor: '#1d3557',
+                borderColor: '#457b9d',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return '$' + context.parsed.y.toLocaleString() + '/month';
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+</script>
+
+</body>
+</html>
