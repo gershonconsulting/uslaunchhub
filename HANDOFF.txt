@@ -1,0 +1,112 @@
+================================================================
+HANDOFF.txt  -  uslaunchhub
+Written by: Claude (nightly run) - token-limit handoff protocol
+Date: 2026-10-22 (night of 2026-10-21 ET)
+Reason: every repo must carry a handoff so another AI can continue
+        from this file alone.
+================================================================
+
+0. WHO YOU ARE READING THIS
+----------------------------------------------------------------
+You are an AI assistant taking over this repository for Olivier Attia,
+founder / CTO of Gershon Consulting LLC.
+
+Read the MASTER HANDOFF first:
+  github.com/gershonconsulting/memory -> HANDOFF.txt
+
+CRITICAL OPERATING RULES:
+  * Olivier does NOT use a terminal, CLI, git or PowerShell. Never give
+    him commands or 'just run this' steps.
+  * He does NOT upload/download/move files. YOU find the route.
+  * End every actionable reply with:
+      GREEN CHECK = ready for him to test (+ link)
+      RED CROSS   = something still to do (+ exactly 3 options he can
+                    action - never a CLI step)
+  * Executors: Ariel = code/repo work. Charles = Chrome extension and web
+    admin panels (Cloudflare, GitHub settings, DNS, publishing).
+
+1. WHAT THIS REPO IS
+----------------------------------------------------------------
+Product / site name : uslaunchhub.com - US launch outlet for Gershon Consulting
+Live URL            : https://uslaunchhub.com (CNAME file in repo)
+What it does        : Static content site. Homepage plus topic pages for
+                      foreign founders moving to / launching in the US
+                      (business, cities, credit, housing, health, schools,
+                      moving, documents, partners, projects, assessment tool,
+                      'coming-from-<country>' pages for France, Germany,
+                      Poland, Russia, UK, Ukraine) and a multilingual
+                      /articles/ hub (EN/FR/ES/DE/IT/PT). Every article ends
+                      with a Gershon Consulting call-to-action.
+Who uses it         : Prospective clients of Gershon Consulting (lead-gen
+                      funnel). Created 2026-10-11 as one of the 'outlet' sites.
+
+2. STACK AND DEPLOY ROUTE
+----------------------------------------------------------------
+Language / framework: Plain HTML/CSS/JS, no build step, no package.json.
+Hosting             : GitHub Pages serving main directly (per PUBLISHING.md
+                      and the CNAME file). NOTE: differs from the Hostinger
+                      default - this one is NOT FTP-deployed.
+DNS / registrar     : Tierra.net registrar; Cloudflare DNS (unverified for
+                      this domain).
+Deploy method       : Commit to main = live. No .github/workflows folder
+                      exists in this repo (verified 2026-10-22).
+Default branch      : main
+How to ship a change: Edit files on a branch, open PR, merge to main (Olivier
+                      or delegate merges). Article procedure is in
+                      PUBLISHING.md (copy articles/_template.html, fill
+                      placeholders, add card to articles/index.html, add URL
+                      to sitemap.xml).
+Secrets / env vars  : None needed by the site itself. Nothing stored here.
+
+3. RECENTLY DONE  [DONE]
+----------------------------------------------------------------
+- 2026-10-11 Initial site + multilingual articles section created.
+- 2026-10-22 PR #1 'Add original US sales hire versus partner guide' landed
+  on main (commit 146cbac). Note: GitHub shows PR #1 as closed; the commit
+  is on main (squash/merge detail unverified).
+
+4. PENDING  [TODO]
+----------------------------------------------------------------
+- Only one article is published so far (US sales hire vs partner guide, EN).
+  Translations FR/ES/DE/IT/PT not published (unverified - check
+  articles/index.html).
+- Confirm GitHub Pages is enabled with custom domain + HTTPS enforced
+  (Charles - repo Settings > Pages).
+- Register the site in the Live Sites Inventory and 1Password per the
+  platform checklist (status unverified).
+
+5. MISSING / NOT BUILT YET
+----------------------------------------------------------------
+- No analytics, no lead-capture form backend in the repo (unverified: check
+  assessment-tool.html and become-a-partner.html for where forms post).
+- No HANDOFF-level runbook (RUNBOOK_uslaunchhub.md in /docs/ absent).
+
+6. KNOWN BUGS / NEEDS FIXING
+----------------------------------------------------------------
+- None reported. Not tested live from this run (unverified).
+
+7. NEXT ACTION - START HERE
+----------------------------------------------------------------
+The single most valuable next step is:
+  -> Open https://uslaunchhub.com and the article URL, confirm 200 and that
+     the CTA links to gershonconsulting.com work; then publish the next
+     article per PUBLISHING.md.
+
+8. GOTCHAS / HARD-WON LESSONS
+----------------------------------------------------------------
+- Sibling outlet repos (gershonconsulting-org, -net, businessexport-org,
+  businessfrance-us, monbusinessauxetatsunis, MyBusinessInUSA,
+  AmericanInFrance) share the same article template and PUBLISHING.md
+  pattern. Edit templates consistently.
+- Branch organic-us-pipeline-guide still exists (merged/closed PR #1); do not
+  delete without Olivier.
+- Never commit credentials; secrets live in 1Password.
+
+9. CONTACT / ESCALATION
+----------------------------------------------------------------
+Olivier Attia - oattia@gmail.com
+Report mailbox - report@gershonconsulting.com
+
+================================================================
+END OF HANDOFF
+================================================================
